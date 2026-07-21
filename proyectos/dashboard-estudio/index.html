@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador Diario - Johan Ortiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>📘 Administrador Diario de Estudios</h1>
+            <p class="subtitle">Johan Ortiz — Disciplina + Código = Éxito</p>
+            <div class="fecha-hora">
+                <span id="fecha-actual"></span>
+                <span id="hora-actual"></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-grid">
+        <section class="card horario-card">
+            <h2>⏰ Horario Diario (Lun - Vie)</h2>
+            <div class="horario-lista">
+                <div class="bloque estudio"><span class="hora">4:40 AM</span> 🛏️ Despertar</div>
+                <div class="bloque gym"><span class="hora">5:00 AM</span> 💪 Gym</div>
+                <div class="bloque estudio"><span class="hora">6:00 AM</span> 📚 Estudio DevSenior <span class="badge">Hábito</span></div>
+                <div class="bloque"><span class="hora">7:00 AM</span> 🚿 Alistarse / Desayuno</div>
+                <div class="bloque trabajo"><span class="hora">8:00 AM</span> 💼 Trabajo</div>
+                <div class="bloque descanso"><span class="hora">4:00 PM</span> 🎮 Warzone <span class="badge">Recompensa</span></div>
+                <div class="bloque uni"><span class="hora">5:00 PM</span> 🎓 Universidad <span class="badge">Mié, Jue, Vie</span></div>
+                <div class="bloque estudio"><span class="hora">7:30 PM</span> 🤖 DevSenior Clase <span class="badge">En vivo</span></div>
+                <div class="bloque"><span class="hora">9:00 PM</span> 📖 Repaso / Cena</div>
+                <div class="bloque dormir"><span class="hora">10:00 PM</span> 🛏️ A dormir</div>
+            </div>
+        </section>
+
+        <section class="card miercoles-card">
+            <h2>📅 Miércoles — Día de Proyectos</h2>
+            <div class="horario-lista">
+                <div class="bloque uni"><span class="hora">8:00 AM - 12:00 PM</span> 📝 Proyectos Universidad</div>
+                <div class="bloque estudio"><span class="hora">1:00 PM - 4:00 PM</span> 🚀 Proyectos DevSenior</div>
+                <div class="bloque descanso"><span class="hora">4:00 PM+</span> 🏖️ Día libre / Descanso</div>
+            </div>
+        </section>
+
+        <section class="card proyectos-card">
+            <h2>🎓 Proyectos Universidad</h2>
+            <div class="input-group">
+                <input type="text" id="input-uni" placeholder="Ej: Proyecto Base de Datos">
+                <button id="btn-uni">➕ Agregar</button>
+            </div>
+            <ul id="lista-uni" class="lista-tareas">
+                <li class="tarea-ejemplo">📌 Proyecto BD — Entrega: 15/08 <span class="estado">Pendiente</span></li>
+            </ul>
+        </section>
+
+        <section class="card proyectos-card">
+            <h2>🤖 Proyectos DevSenior</h2>
+            <div class="input-group">
+                <input type="text" id="input-dev" placeholder="Ej: Módulo 2 - FastAPI">
+                <button id="btn-dev">➕ Agregar</button>
+            </div>
+            <ul id="lista-dev" class="lista-tareas">
+                <li class="tarea-ejemplo">🚀 Módulo 1: Juego en Python <span class="estado completado">✅ Completado</span></li>
+            </ul>
+        </section>
+
+        <section class="card racha-card">
+            <h2>🔥 Racha de Hábitos</h2>
+            <div class="racha-contenedor">
+                <div class="habito">
+                    <span>💪 Gym</span>
+                    <div class="contador" id="racha-gym">0 días</div>
+                    <button class="btn-racha" data-habito="gym">✅ Cumplido</button>
+                </div>
+                <div class="habito">
+                    <span>📚 Estudio 6 AM</span>
+                    <div class="contador" id="racha-estudio">0 días</div>
+                    <button class="btn-racha" data-habito="estudio">✅ Cumplido</button>
+                </div>
+                <div class="habito">
+                    <span>🤖 DevSenior</span>
+                    <div class="contador" id="racha-dev">0 días</div>
+                    <button class="btn-racha" data-habito="dev">✅ Cumplido</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>💻 Creado por Johan Ortiz — Con disciplina y código, todo es posible.</p>
+        <p>⏳ Última actualización: <span id="ultima-actualizacion"></span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
