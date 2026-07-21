@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Johan Ortiz - Portafolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0d1117;
+            color: #f0f6fc;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container { max-width: 900px; width: 100%; }
+        .perfil {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #30363d;
+        }
+        .perfil h1 {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #58a6ff, #9e6af3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .perfil .titulo {
+            font-size: 1.3rem;
+            color: #8b949e;
+            margin: 10px 0;
+        }
+        .perfil .descripcion {
+            color: #8b949e;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .perfil .links a {
+            color: #58a6ff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.1rem;
+        }
+        .perfil .links a:hover { text-decoration: underline; }
+        .habilidades {
+            padding: 30px 0;
+            border-bottom: 1px solid #30363d;
+        }
+        .habilidades h2 {
+            font-size: 1.8rem;
+            color: #f0f6fc;
+            margin-bottom: 20px;
+        }
+        .habilidades .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .habilidades .badge {
+            background: #161b22;
+            border: 1px solid #30363d;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #f0f6fc;
+        }
+        .badge.azul { border-color: #58a6ff; color: #58a6ff; }
+        .badge.morado { border-color: #9e6af3; color: #9e6af3; }
+        .badge.verde { border-color: #238636; color: #238636; }
+        .badge.naranja { border-color: #f0883e; color: #f0883e; }
+        .proyectos {
+            padding: 30px 0;
+            border-bottom: 1px solid #30363d;
+        }
+        .proyectos h2 {
+            font-size: 1.8rem;
+            color: #f0f6fc;
+            margin-bottom: 20px;
+        }
+        .proyecto {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+        .proyecto:hover { border-color: #58a6ff; }
+        .proyecto h3 {
+            font-size: 1.3rem;
+            color: #58a6ff;
+            margin-bottom: 5px;
+        }
+        .proyecto p {
+            color: #8b949e;
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+        .proyecto .tecnologias {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 10px 0;
+        }
+        .proyecto .tecnologia {
+            background: #0d1117;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #8b949e;
+            border: 1px solid #30363d;
+        }
+        .proyecto .enlaces a {
+            color: #58a6ff;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 0.95rem;
+        }
+        .proyecto .enlaces a:hover { text-decoration: underline; }
+        .contacto {
+            padding: 30px 0;
+            text-align: center;
+        }
+        .contacto h2 { font-size: 1.8rem; margin-bottom: 15px; }
+        .contacto p { color: #8b949e; }
+        .contacto a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .contacto a:hover { text-decoration: underline; }
+        .footer {
+            margin-top: 30px;
+            padding: 20px;
+            text-align: center;
+            color: #8b949e;
+            font-size: 0.9rem;
+            border-top: 1px solid #30363d;
+            width: 100%;
+            max-width: 1300px;
+        }
+        @media (max-width: 600px) {
+            .perfil h1 { font-size: 2rem; }
+            .badges { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- PERFIL -->
+        <section class="perfil">
+            <h1>Johan Ortiz</h1>
+            <p class="titulo">Python AI Engineer en formación</p>
+            <p class="descripcion">
+                Estudiante de Ingeniería de Sistemas (5to cuatrimestre)
+                apasionado por la Inteligencia Artificial y el desarrollo de software.
+                Busco mi primera oportunidad remota para construir productos que marquen la diferencia.
+            </p>
+            <div class="links">
+                <a href="https://github.com/ortizdelgadojohanjose04-ai" target="_blank">🐙 GitHub</a>
+                <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank">🔗 LinkedIn</a>
+                <a href="mailto:ortizdelgadojohanjose04@gmail.com">✉️ Correo</a>
+            </div>
+        </section>
+
+        <!-- HABILIDADES -->
+        <section class="habilidades">
+            <h2>🛠️ Habilidades Técnicas</h2>
+            <div class="badges">
+                <span class="badge azul">Python</span>
+                <span class="badge azul">FastAPI</span>
+                <span class="badge morado">React</span>
+                <span class="badge verde">PostgreSQL</span>
+                <span class="badge naranja">Git / GitHub</span>
+                <span class="badge azul">OpenAI API</span>
+                <span class="badge morado">HTML / CSS</span>
+                <span class="badge verde">JavaScript</span>
+            </div>
+        </section>
+
+        <!-- PROYECTOS -->
+        <section class="proyectos">
+            <h2>📁 Proyectos Destacados</h2>
+
+            <!-- DASHBOARD -->
+            <div class="proyecto">
+                <h3>📘 Administrador Diario de Estudio</h3>
+                <p>
+                    Aplicación web para organizar horarios, proyectos académicos
+                    y hábitos diarios con sistema de racha para mantener la disciplina.
+                </p>
+                <div class="tecnologias">
+                    <span class="tecnologia">HTML</span>
+                    <span class="tecnologia">CSS</span>
+                    <span class="tecnologia">JavaScript</span>
+                    <span class="tecnologia">LocalStorage</span>
+                </div>
+                <div class="enlaces">
+                    <a href="#" target="_blank">🔗 Demo en vivo</a>
+                    <a href="https://github.com/ortizdelgadojohanjose04-ai/ortizdelgadojohanjose04-ai.github.io/tree/main/dashboard-estudio" target="_blank">📂 Ver código</a>
+                </div>
+            </div>
+
+            <!-- JUEGO EN PYTHON -->
+            <div class="proyecto">
+                <h3>🎮 Juego en Python (Versión 1)</h3>
+                <p>
+                    Desarrollo de un juego interactivo en Python aplicando
+                    lógica de programación, manejo de eventos y estructuras de datos.
+                </p>
+                <div class="tecnologias">
+                    <span class="tecnologia">Python</span>
+                </div>
+                <div class="enlaces">
+                    <a href="#" target="_blank">📂 Ver código</a>
+                </div>
+            </div>
+
+            <!-- PRÓXIMAMENTE API -->
+            <div class="proyecto" style="opacity: 0.6; border-color: #30363d;">
+                <h3 style="color: #8b949e;">🚧 Próximamente: API con FastAPI</h3>
+                <p>
+                    Construiré una API REST con FastAPI, PostgreSQL y autenticación JWT.
+                    Proyecto del módulo de Backend de DevSenior.
+                </p>
+                <div class="tecnologias">
+                    <span class="tecnologia">Python</span>
+                    <span class="tecnologia">FastAPI</span>
+                    <span class="tecnologia">PostgreSQL</span>
+                    <span class="tecnologia">JWT</span>
+                </div>
+            </div>
+
+            <!-- PRÓXIMAMENTE FULLSTACK -->
+            <div class="proyecto" style="opacity: 0.6; border-color: #30363d;">
+                <h3 style="color: #8b949e;">🚧 Próximamente: App Fullstack con React</h3>
+                <p>
+                    Aplicación completa con React en el frontend y FastAPI en el backend.
+                    Incluirá pagos con Stripe y despliegue en la nube.
+                </p>
+                <div class="tecnologias">
+                    <span class="tecnologia">React</span>
+                    <span class="tecnologia">FastAPI</span>
+                    <span class="tecnologia">Stripe</span>
+                    <span class="tecnologia">Docker</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="contacto">
+            <h2>📬 Contacto</h2>
+            <p>Si quieres colaborar o tienes una oportunidad para mí, escríbeme:</p>
+            <br>
+            <a href="mailto:ortizdelgadojohanjose04@gmail.com">ortizdelgadojohanjose04@gmail.com</a>
+            <br><br>
+            <div class="links">
+                <a href="https://github.com/ortizdelgadojohanjose04-ai" target="_blank">🐙 GitHub</a>
+                <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank">🔗 LinkedIn</a>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.8rem; color: #6e7681;">
+                Hecho con 💻 por Johan Ortiz
+            </p>
+        </section>
+
+    </div>
+</body>
+</html>
