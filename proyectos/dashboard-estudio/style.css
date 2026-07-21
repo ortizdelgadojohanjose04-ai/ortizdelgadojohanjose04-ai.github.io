@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fondo-oscuro: #0d1117;
+    --fondo-tarjeta: #161b22;
+    --borde-tarjeta: #30363d;
+    --texto-principal: #f0f6fc;
+    --texto-secundario: #8b949e;
+    --azul: #58a6ff;
+    --verde: #238636;
+    --naranja: #f0883e;
+    --morado: #9e6af3;
+    --rojo: #f85149;
+    --gym-color: #ff7b72;
+    --uni-color: #1f6feb;
+    --descanso-color: #f0883e;
+    --trabajo-color: #8b949e;
+    --dormir-color: #6e7681;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--fondo-oscuro);
+    color: var(--texto-principal);
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    max-width: 1300px;
+    background: var(--fondo-tarjeta);
+    border: 1px solid var(--borde-tarjeta);
+    border-radius: 16px;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2rem;
+    background: linear-gradient(135deg, var(--azul), var(--morado));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: var(--texto-secundario);
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+.fecha-hora {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: var(--texto-secundario);
+}
+
+.fecha-hora span {
+    margin: 0 10px;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1300px;
+    width: 100%;
+}
+
+.card {
+    background: var(--fondo-tarjeta);
+    border: 1px solid var(--borde-tarjeta);
+    border-radius: 12px;
+    padding: 20px;
+    transition: border-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: var(--azul);
+}
+
+.card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--texto-principal);
+    border-bottom: 1px solid var(--borde-tarjeta);
+    padding-bottom: 10px;
+}
+
+.horario-card {
+    grid-column: 1 / 2;
+}
+
+.miercoles-card {
+    grid-column: 2 / 3;
+}
+
+.proyectos-card {
+    grid-column: auto;
+}
+
+.racha-card {
+    grid-column: 1 / 4;
+}
+
+.horario-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.bloque {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: #0d1117;
+    border-left: 4px solid var(--texto-secundario);
+    font-size: 0.95rem;
+    gap: 8px;
+}
+
+.bloque .hora {
+    font-weight: bold;
+    color: var(--azul);
+    min-width: 80px;
+}
+
+.bloque.estudio { border-left-color: var(--morado); }
+.bloque.gym { border-left-color: var(--gym-color); }
+.bloque.trabajo { border-left-color: var(--trabajo-color); }
+.bloque.descanso { border-left-color: var(--naranja); }
+.bloque.uni { border-left-color: var(--uni-color); }
+.bloque.dormir { border-left-color: var(--dormir-color); }
+
+.badge {
+    background: var(--verde);
+    color: white;
+    font-size: 0.65rem;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--borde-tarjeta);
+    border-radius: 8px;
+    background: #0d1117;
+    color: var(--texto-principal);
+    font-size: 0.95rem;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--azul);
+}
+
+.input-group button {
+    padding: 10px 20px;
+    background: var(--verde);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.input-group button:hover {
+    background: #1e7a2e;
+}
+
+.lista-tareas {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-tareas li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: #0d1117;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    border-left: 3px solid var(--azul);
+}
+
+.lista-tareas li .estado {
+    font-size: 0.75rem;
+    background: var(--naranja);
+    color: #0d1117;
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.lista-tareas li .estado.completado {
+    background: var(--verde);
+    color: white;
+}
+
+.tarea-ejemplo {
+    opacity: 0.6;
+    font-style: italic;
+}
+
+.racha-contenedor {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.habito {
+    background: #0d1117;
+    padding: 15px 25px;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 120px;
+    border: 1px solid var(--borde-tarjeta);
+}
+
+.habito span {
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.contador {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--azul);
+    margin: 8px 0;
+}
+
+.btn-racha {
+    background: var(--verde);
+    color: white;
+    border: none;
+    padding: 6px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.btn-racha:hover {
+    background: #1e7a2e;
+}
+
+.footer {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--borde-tarjeta);
+    width: 100%;
+    max-width: 1300px;
+}
+
+@media (max-width: 900px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+    .horario-card,
+    .miercoles-card,
+    .proyectos-card,
+    .racha-card {
+        grid-column: 1 / 2;
+    }
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    .racha-contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+    .habito {
+        width: 100%;
+        max-width: 250px;
+    }
+}
