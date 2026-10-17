@@ -1,2 +1,1 @@
-# ortizdelgadojohanjose04-ai.github.io
-Portafolio de Johan Ortiz - Python AI Engineer.
+Hi, I'm Johan Ortiz, a Systems Engineering student and Backend Developer. This is my portfolio where I showcase my Python, AI, and web scraping projects. Currently building high-performance Apify Actors.
