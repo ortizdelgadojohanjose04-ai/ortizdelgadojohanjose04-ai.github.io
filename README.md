@@ -1,2 +1,2 @@
-Hi, I'm Johan Ortiz, a Systems Engineering student and Backend Developer. 
-This is my portfolio where I showcase my Python, AI, and web scraping projects. Currently building high-performance Apify Actors.
+Hola, soy Johan Ortiz, Desarrollador Fullstack especializado en Python y pipelines de datos.
+En este portafolio muestro mis proyectos de extracción de datos (Web Scraping), APIs y desarrollo de videojuegos con C#. Actualmente construyo herramientas de alto rendimiento para la plataforma Apify.
