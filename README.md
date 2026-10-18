@@ -1,7 +1,17 @@
-Hola, soy Johan Ortiz, Desarrollador Fullstack especializado en Python y pipelines de datos.
-En este portafolio muestro mis proyectos de extracción de datos (Web Scraping), APIs y desarrollo de videojuegos con C#. Actualmente construyo herramientas de alto rendimiento para la plataforma Apify.
+# Hi, I'm Johan Ortiz 👋
 
+**Systems Engineer & Fullstack Developer** | Data Extraction & AI-ready Data Pipelines.
 
-🚀 Apify Store Publisher
-I build and maintain high-performance web scrapers and data extraction APIs on Apify.
-Check out my Apify Publisher Profile https://apify.com/johandev_04
+I'm a backend developer focused on building high-performance web scrapers, APIs, and data extraction tools. I create solutions designed to feed AI models and automate data workflows.
+
+## 🚀 Apify Store Publisher
+I build and maintain production-ready web scrapers on the Apify platform. 
+- [Google Trends Scraper & API](https://apify.com/johandev_04/google-trends-scraper)
+- [YouTube Transcript Scraper & API](https://apify.com/johandev_04/youtube-transcript-scraper)
+
+👉 **[Check out my full Apify Publisher Profile here](https://apify.com/johandev_04)**
+
+## 💻 Tech Stack
+- **Languages:** Python (Main), C#, JavaScript
+- **Data & Backend:** FastAPI, Web Scraping (Apify, Playwright), PostgreSQL
+- **Game Dev:** Godot Engine
