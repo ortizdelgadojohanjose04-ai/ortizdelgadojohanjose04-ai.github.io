@@ -4,6 +4,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
 		<title>JuegoMemoria</title>
+		<!-- FUENTE PARA EMOJIS -->
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
 		<style>
 html, body, #canvas {
 	margin: 0;
@@ -16,6 +18,8 @@ body {
 	background-color: black;
 	overflow: hidden;
 	touch-action: none;
+	/* FORZAR FUENTE DE EMOJIS */
+	font-family: 'Noto Color Emoji', 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
 }
 
 #canvas {
@@ -217,4 +221,3 @@ const engine = new Engine(GODOT_CONFIG);
 		</script>
 	</body>
 </html>
-
