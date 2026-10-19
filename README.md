@@ -5,7 +5,7 @@ I build production-ready software for data extraction, web scraping, and AI pipe
 
 Currently, I design and publish high-performance tools on the Apify Store, helping businesses extract data without getting blocked.
 
-[Apify Publisher Profile](https://apify.com/johandev_04) | [LinkedIn](https://linkedin.com/in/johan-ortiz-260aa0378) | [Portfolio](https://ortizdelgadojohanjose04-ai.github.io)
+[Apify Publisher Profile](https://apify.com/johandev_04) | [LinkedIn](https://linkedin.com/in/johan-ortiz-260aa0378) | [Portfolio Website](https://ortizdelgadojohanjose04-ai.github.io)
 
 ---
 
@@ -25,6 +25,21 @@ Reliable extraction of YouTube transcripts designed for AI training and NLP anal
 B2B data enrichment from company domains. Extracts tech stack, descriptions, and social links for sales pipelines.
 `Python` `B2B` `Data Pipeline`
 [View on Apify Store](https://apify.com/johandev_04/company-enricher)
+
+**B2B Email Extractor**
+Extracts business emails from company domains automatically. Filters out blocked sites and detects tech stacks. Ideal for lead generation.
+`Python` `B2B` `Lead Generation`
+[View on Apify Store](https://apify.com/johandev_04/b2b-email-extractor)
+
+**Email Validator API**
+Validate email addresses with syntax checks, MX records, disposable domain detection, and trust scoring. Ideal for cleaning B2B databases.
+`Python` `Email Validation` `B2B`
+[View on Apify Store](https://apify.com/johandev_04/email-validator)
+
+**LinkedIn Company Scraper & API**
+Extract company data from LinkedIn using Google Search. Gets industry, company size, followers, and description. 100% reliable, no proxies or cookies required.
+`Python` `LinkedIn` `B2B` `Data Extraction`
+[View on Apify Store](https://apify.com/johandev_04/linkedin-company-scraper)
 
 ---
 
