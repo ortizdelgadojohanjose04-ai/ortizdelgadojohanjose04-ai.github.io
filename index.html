@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,6 +17,8 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        html { scroll-behavior: smooth; }
+
         body {
             background-color: var(--bg);
             color: var(--text-main);
@@ -28,10 +30,42 @@
             background-repeat: no-repeat;
         }
 
+        /* Barra de navegación fija - CORREGIDA */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 80px 24px;
+            padding: 100px 24px 40px 24px;
         }
 
         /* Header */
@@ -39,6 +73,7 @@
             margin-bottom: 60px;
             animation: fadeIn 0.8s ease-out;
             text-align: center;
+            scroll-margin-top: 80px; /* Para que el scroll no oculte el título */
         }
 
         .badge-available {
@@ -105,12 +140,36 @@
             transform: translateY(-2px);
         }
 
+        /* Secciones */
+        section {
+            margin-bottom: 80px;
+            scroll-margin-top: 80px; /* Para que el scroll no oculte el título */
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
         /* About / Stats Section */
         .about-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
-            margin-bottom: 60px;
             padding: 40px;
             background: var(--card-bg);
             border: 1px solid var(--border);
@@ -154,30 +213,11 @@
             color: var(--text-muted);
         }
 
-        /* Sección de Tech Stack */
-        .section-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .section-title::before {
-            content: '';
-            display: block;
-            width: 20px;
-            height: 2px;
-            background: var(--accent);
-            border-radius: 2px;
-        }
-
+        /* Skills */
         .skills {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
-            margin-bottom: 60px;
         }
 
         .skill {
@@ -196,12 +236,11 @@
             color: #ffffff;
         }
 
-        /* GRID DE PROYECTOS (Estilo Libro) */
+        /* Proyectos Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
-            animation: fadeIn 1s ease-out;
         }
 
         .project-card {
@@ -216,23 +255,10 @@
             flex-direction: column;
         }
 
-        .project-card::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
         .project-card:hover {
             border-color: #404040;
             transform: translateY(-4px);
             box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
-        }
-
-        .project-card:hover::before {
-            opacity: 1;
         }
 
         .project-title {
@@ -286,8 +312,32 @@
             background: var(--accent);
         }
 
+        /* Certifications / Education List */
+        .cert-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .cert-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .cert-item h4 {
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .cert-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
         footer {
-            margin-top: 80px;
             padding-top: 40px;
             border-top: 1px solid var(--border);
             text-align: center;
@@ -304,6 +354,7 @@
         @media (max-width: 900px) {
             .projects-grid { grid-template-columns: repeat(2, 1fr); }
             .about-section { grid-template-columns: 1fr; }
+            .cert-list { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 600px) {
@@ -314,8 +365,20 @@
     </style>
 </head>
 <body>
+
+    <!-- Barra de Navegación Fija -->
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certifications</a>
+        </div>
+    </nav>
+
     <div class="container">
         
+        <!-- Header -->
         <header>
             <div class="badge-available">Available for new opportunities</div>
             <h1>Johan Ortiz</h1>
@@ -332,8 +395,8 @@
             </div>
         </header>
 
-        <!-- Sección About / Stats -->
-        <div class="about-section">
+        <!-- Sección About -->
+        <section id="about" class="about-section">
             <div class="about-text">
                 <h3>About Me</h3>
                 <p>
@@ -367,116 +430,139 @@
                     <span class="stat-label">Reliability</span>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section-title">Technical Stack</div>
-        <div class="skills">
-            <span class="skill">Python</span>
-            <span class="skill">FastAPI</span>
-            <span class="skill">Apify SDK</span>
-            <span class="skill">C#</span>
-            <span class="skill">React</span>
-            <span class="skill">PostgreSQL</span>
-            <span class="skill">Web Scraping</span>
-            <span class="skill">Playwright</span>
-            <span class="skill">Godot Engine</span>
-        </div>
-
-        <div class="section-title">Published Software (Apify Store)</div>
-        
-        <!-- El Grid de 3 columnas -->
-        <div class="projects-grid">
-            
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-title">LinkedIn Company Scraper & API</div>
-                <p class="project-desc">
-                    Extract company data from LinkedIn using Google Search. Gets industry, company size, followers, and description. 100% reliable, no proxies or cookies required.
-                </p>
-                <div class="project-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">LinkedIn</span>
-                    <span class="tag">B2B</span>
-                </div>
-                <a href="https://apify.com/johandev_04/linkedin-company-scraper" target="_blank" class="btn-project">View on Apify Store &rarr;</a>
+        <!-- Sección Skills -->
+        <section id="skills">
+            <div class="section-title">Technical Stack</div>
+            <div class="skills">
+                <span class="skill">Python</span>
+                <span class="skill">FastAPI</span>
+                <span class="skill">Apify SDK</span>
+                <span class="skill">C#</span>
+                <span class="skill">React</span>
+                <span class="skill">PostgreSQL</span>
+                <span class="skill">Web Scraping</span>
+                <span class="skill">Playwright</span>
+                <span class="skill">Godot Engine</span>
             </div>
+        </section>
 
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-title">Email Validator API</div>
-                <p class="project-desc">
-                    Validate email addresses with syntax checks, MX records, disposable domain detection, and trust scoring. Ideal for cleaning B2B databases.
-                </p>
-                <div class="project-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Email</span>
-                    <span class="tag">B2B</span>
+        <!-- Sección Proyectos -->
+        <section id="projects">
+            <div class="section-title">Published Software (Apify Store)</div>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-title">LinkedIn Company Scraper & API</div>
+                    <p class="project-desc">
+                        Extract company data from LinkedIn using Google Search. Gets industry, company size, followers, and description. 100% reliable, no proxies or cookies required.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">LinkedIn</span>
+                        <span class="tag">B2B</span>
+                    </div>
+                    <a href="https://apify.com/johandev_04/linkedin-company-scraper" target="_blank" class="btn-project">View on Apify Store &rarr;</a>
                 </div>
-                <a href="https://apify.com/johandev_04/email-validator" target="_blank" class="btn-project">View on Apify Store &rarr;</a>
-            </div>
 
-            <!-- Project 3 -->
-            <div class="project-card">
-                <div class="project-title">B2B Email Extractor</div>
-                <p class="project-desc">
-                    Extracts business emails from company domains automatically. Filters out blocked sites and detects tech stacks. Ideal for lead generation.
-                </p>
-                <div class="project-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">B2B</span>
-                    <span class="tag">Lead Gen</span>
+                <div class="project-card">
+                    <div class="project-title">Email Validator API</div>
+                    <p class="project-desc">
+                        Validate email addresses with syntax checks, MX records, disposable domain detection, and trust scoring. Ideal for cleaning B2B databases.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Email</span>
+                        <span class="tag">B2B</span>
+                    </div>
+                    <a href="https://apify.com/johandev_04/email-validator" target="_blank" class="btn-project">View on Apify Store &rarr;</a>
                 </div>
-                <a href="https://apify.com/johandev_04/b2b-email-extractor" target="_blank" class="btn-project">View on Apify Store &rarr;</a>
-            </div>
 
-            <!-- Project 4 -->
-            <div class="project-card">
-                <div class="project-title">Company Enrichment API</div>
-                <p class="project-desc">
-                    B2B data enrichment from company domains. Extracts tech stack, descriptions, and social links for sales pipelines.
-                </p>
-                <div class="project-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">B2B</span>
-                    <span class="tag">Pipeline</span>
+                <div class="project-card">
+                    <div class="project-title">B2B Email Extractor</div>
+                    <p class="project-desc">
+                        Extracts business emails from company domains automatically. Filters out blocked sites and detects tech stacks. Ideal for lead generation.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">B2B</span>
+                        <span class="tag">Lead Gen</span>
+                    </div>
+                    <a href="https://apify.com/johandev_04/b2b-email-extractor" target="_blank" class="btn-project">View on Apify Store &rarr;</a>
                 </div>
-                <a href="https://apify.com/johandev_04/company-enricher" target="_blank" class="btn-project">View on Apify Store &rarr;</a>
-            </div>
 
-            <!-- Project 5 -->
-            <div class="project-card">
-                <div class="project-title">Google Trends Scraper & API</div>
-                <p class="project-desc">
-                    High-performance extraction bypassing 429 rate limits using residential proxies and session tokens. +99% success rate.
-                </p>
-                <div class="project-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Web Scraping</span>
-                    <span class="tag">API</span>
+                <div class="project-card">
+                    <div class="project-title">Company Enrichment API</div>
+                    <p class="project-desc">
+                        B2B data enrichment from company domains. Extracts tech stack, descriptions, and social links for sales pipelines.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">B2B</span>
+                        <span class="tag">Pipeline</span>
+                    </div>
+                    <a href="https://apify.com/johandev_04/company-enricher" target="_blank" class="btn-project">View on Apify Store &rarr;</a>
                 </div>
-                <a href="https://apify.com/johandev_04/google-trends-scraper" target="_blank" class="btn-project">View on Apify Store &rarr;</a>
-            </div>
 
-            <!-- Project 6 -->
-            <div class="project-card">
-                <div class="project-title">YouTube Transcript Scraper</div>
-                <p class="project-desc">
-                    Reliable extraction of YouTube transcripts designed for AI training and NLP analysis. Handles IP bans efficiently.
-                </p>
-                <div class="project-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">NLP</span>
-                    <span class="tag">Data</span>
+                <div class="project-card">
+                    <div class="project-title">Google Trends Scraper & API</div>
+                    <p class="project-desc">
+                        High-performance extraction bypassing 429 rate limits using residential proxies and session tokens. +99% success rate.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Web Scraping</span>
+                        <span class="tag">API</span>
+                    </div>
+                    <a href="https://apify.com/johandev_04/google-trends-scraper" target="_blank" class="btn-project">View on Apify Store &rarr;</a>
                 </div>
-                <a href="https://apify.com/johandev_04/youtube-transcript-scraper" target="_blank" class="btn-project">View on Apify Store &rarr;</a>
+
+                <div class="project-card">
+                    <div class="project-title">YouTube Transcript Scraper</div>
+                    <p class="project-desc">
+                        Reliable extraction of YouTube transcripts designed for AI training and NLP analysis. Handles IP bans efficiently.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Data</span>
+                    </div>
+                    <a href="https://apify.com/johandev_04/youtube-transcript-scraper" target="_blank" class="btn-project">View on Apify Store &rarr;</a>
+                </div>
+
             </div>
+        </section>
 
-        </div>
+        <!-- Sección Certifications -->
+        <section id="certifications">
+            <div class="section-title">Certifications & Education</div>
+            <div class="cert-list">
+                <div class="cert-item">
+                    <h4>Systems Engineering</h4>
+                    <p>Universidad Internacional San Isidro Labrador (UISIL) - In progress (~63%)</p>
+                </div>
+                <div class="cert-item">
+                    <h4>Python AI Engineer</h4>
+                    <p>DevSenior Code - In progress</p>
+                </div>
+                <div class="cert-item">
+                    <h4>Apify Publisher</h4>
+                    <p>Verified Publisher on the Apify Store</p>
+                </div>
+                <div class="cert-item">
+                    <h4>Full Stack Development</h4>
+                    <p>FastAPI, React, PostgreSQL, Docker</p>
+                </div>
+            </div>
+        </section>
 
+        <!-- Footer -->
         <footer>
             <p>Built with precision by Johan Ortiz &copy; 2026</p>
         </footer>
 
     </div>
+
 </body>
 </html>
