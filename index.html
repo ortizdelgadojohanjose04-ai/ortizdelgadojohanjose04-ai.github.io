@@ -90,9 +90,7 @@
 
         /* Juego */
         .game-container { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 24px; text-align: center; }
-        .game-preview { width: 100%; height: 500px; background: #000; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); margin-bottom: 20px; border: 1px solid var(--border); overflow: hidden; }
-        .game-preview iframe { width: 100%; height: 100%; border: none; }
-        .btn-play { background: var(--accent); color: #000; padding: 12px 30px; border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: opacity 0.2s; }
+        .btn-play { display: inline-block; background: var(--accent); color: #000; padding: 12px 30px; border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: opacity 0.2s; text-decoration: none; }
         .btn-play:hover { opacity: 0.8; }
 
         /* Comentarios */
@@ -215,10 +213,11 @@
         <section id="game">
             <div class="section-title">My Game (Godot Engine)</div>
             <div class="game-container">
-                <div class="game-preview" id="game-embed">
-                    <p>Click "Play Game" to load the demo.</p>
-                </div>
-                <button class="btn-play" onclick="loadGame()">▶ Play Game</button>
+                <p style="margin-bottom: 20px; color: var(--text-muted);">
+                    A prototype of a memory game built with Godot Engine. 
+                    Click the button below to play it in a new tab.
+                </p>
+                <a href="https://ortizdelgadojohanjose04-ai.github.io/game-build/index.html" target="_blank" class="btn-play">▶ Play Game (New Tab)</a>
                 <p style="margin-top: 15px; font-size: 0.85rem; color: var(--text-muted);">Status: 15% Complete (Early Prototype)</p>
             </div>
         </section>
@@ -240,12 +239,5 @@
         </footer>
     </div>
 
-    <script>
-        function loadGame() {
-            const container = document.getElementById('game-embed');
-            // Ruta ABSOLUTA para evitar el error 404
-            container.innerHTML = '<iframe src="https://ortizdelgadojohanjose04-ai.github.io/game-build/index.html" allow="autoplay; fullscreen; clipboard-read; clipboard-write" loading="lazy" style="width:100%; height:100%; border:none;"></iframe>';
-        }
-    </script>
 </body>
 </html>
