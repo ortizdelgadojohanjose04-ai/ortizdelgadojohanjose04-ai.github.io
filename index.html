@@ -6,17 +6,18 @@
     <title>Johan Ortiz | Systems Engineer & Data Extraction</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0a0a0a;
-            --card-bg: #121212;
-            --border: #262626;
+            --bg: #030303;
+            --card-bg: #0a0a0a;
+            --border: #1a1a1a;
             --text-main: #ededed;
-            --text-muted: #a1a1aa;
+            --text-muted: #888888;
             --accent: #3b82f6;
-            --accent-glow: rgba(59, 130, 246, 0.2);
+            --accent-glow: rgba(59, 130, 246, 0.3);
             --font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,107 +29,168 @@
             font-family: var(--font);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
+            background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
             background-repeat: no-repeat;
+            overflow-x: hidden;
+        }
+
+        /* Animaciones Globales */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 var(--accent-glow); }
+            70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
 
         /* Navegación Fija (Estilo Brittany Chiang) */
         .navbar {
             position: fixed;
             top: 0; left: 0; width: 100%;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(12px);
+            background: rgba(3, 3, 3, 0.9);
+            backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
             display: flex;
             justify-content: center;
             padding: 16px 0;
         }
-        .nav-links { display: flex; gap: 24px; }
+        .nav-links { display: flex; gap: 30px; }
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: color 0.3s;
+            font-family: var(--mono);
         }
         .nav-links a:hover { color: var(--accent); }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 120px 24px 60px 24px; }
 
-        /* Hero Section (Como Alex Naraghi - minimalista) */
-        header { text-align: center; margin-bottom: 80px; animation: fadeIn 0.8s ease-out; }
-        .badge-available { display: inline-block; background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 6px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 24px; border: 1px solid rgba(16, 185, 129, 0.2); text-transform: uppercase; letter-spacing: 1px; }
-        h1 { font-size: 4rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 15px; color: #ffffff; }
-        h2 { font-size: 1.5rem; font-weight: 400; color: var(--text-muted); margin-bottom: 30px; }
+        /* Hero Section */
+        header { text-align: center; margin-bottom: 80px; animation: fadeInUp 1s ease-out; }
+        .badge-available { 
+            display: inline-block; 
+            background: rgba(16, 185, 129, 0.1); 
+            color: #10b981; 
+            padding: 6px 16px; 
+            border-radius: 999px; 
+            font-size: 0.85rem; 
+            font-weight: 600; 
+            margin-bottom: 24px; 
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: pulseGlow 2s infinite;
+        }
+        h1 { font-size: 4.5rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 15px; color: #ffffff; }
+        h2 { font-size: 1.5rem; font-weight: 400; color: var(--text-muted); margin-bottom: 30px; font-family: var(--mono); }
         .bio { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px auto; }
         
-        .social-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 60px; }
-        .btn-link { display: inline-flex; align-items: center; background: var(--card-bg); border: 1px solid var(--border); color: var(--text-main); text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 500; transition: all 0.3s; }
+        .social-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 80px; }
+        .btn-link { 
+            display: inline-flex; 
+            align-items: center; 
+            background: var(--card-bg); 
+            border: 1px solid var(--border); 
+            color: var(--text-main); 
+            text-decoration: none; 
+            padding: 12px 24px; 
+            border-radius: 8px; 
+            font-weight: 500; 
+            transition: all 0.3s; 
+            font-family: var(--mono);
+        }
         .btn-link:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 5px 15px var(--accent-glow); }
 
-        /* Impacto (Estilo Tom Weightman) */
-        .impact-grid { display: flex; justify-content: center; gap: 60px; margin-bottom: 100px; flex-wrap: wrap; }
+        /* Impacto */
+        .impact-grid { display: flex; justify-content: center; gap: 60px; margin-bottom: 100px; flex-wrap: wrap; animation: fadeInUp 1.2s ease-out; }
         .impact-item { text-align: center; }
-        .impact-number { font-size: 3rem; font-weight: 800; color: var(--accent); display: block; }
+        .impact-number { font-size: 3rem; font-weight: 800; color: var(--accent); display: block; font-family: var(--mono); }
         .impact-label { color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
 
         /* Secciones */
-        section { margin-bottom: 100px; scroll-margin-top: 100px; }
+        section { margin-bottom: 100px; scroll-margin-top: 100px; animation: fadeInUp 1.2s ease-out; }
         .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; display: flex; align-items: center; gap: 15px; color: #ffffff; }
         .section-title::before { content: ''; display: block; width: 30px; height: 3px; background: var(--accent); border-radius: 3px; }
 
-        /* Proyectos (Estilo La Playa - Grid visual) */
+        /* Proyectos */
         .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .project-card { 
             background: var(--card-bg); 
             border: 1px solid var(--border); 
             border-radius: 16px; 
-            padding: 24px; 
+            padding: 30px; 
             transition: all 0.3s; 
             display: flex; 
             flex-direction: column;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
         .project-card::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
             background: linear-gradient(90deg, transparent, var(--accent), transparent);
             opacity: 0; transition: opacity 0.3s;
         }
-        .project-card:hover { border-color: #444; transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
+        .project-card:hover { border-color: #444; transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
         .project-card:hover::before { opacity: 1; }
-        .project-title { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-        .project-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; flex-grow: 1; }
-        .project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
-        .tag { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; color: #ccc; }
-        .btn-project { display: block; text-align: center; color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; padding: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.2s; }
+        .project-title { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+        .project-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
+        .project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 25px; }
+        .tag { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; color: #ccc; font-family: var(--mono); }
+        .btn-project { display: block; text-align: center; color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.3s; }
         .btn-project:hover { background: var(--accent); color: #000; }
 
-        /* Caso de Estudio (Estilo Leland Jansen - con resultados) */
-        .case-study { background: linear-gradient(145deg, #1a1a1a, #111); border: 1px solid #333; border-radius: 16px; padding: 40px; }
-        .case-title { font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 15px; }
-        .case-text { color: var(--text-muted); font-size: 1rem; margin-bottom: 20px; }
-        .case-results { display: flex; gap: 30px; margin-top: 20px; flex-wrap: wrap; }
-        .case-result { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); padding: 15px 25px; border-radius: 8px; text-align: center; flex: 1; }
-        .case-result span { display: block; font-size: 2rem; font-weight: 800; color: var(--accent); }
-        .case-result p { font-size: 0.85rem; color: var(--text-muted); margin-top: 5px; }
+        /* Caso de Estudio */
+        .case-study { background: linear-gradient(145deg, #111, #0a0a0a); border: 1px solid #222; border-radius: 16px; padding: 50px; position: relative; overflow: hidden; }
+        .case-study::after {
+            content: ''; position: absolute; top: -50px; right: -50px; width: 200px; height: 200px;
+            background: var(--accent-glow); filter: blur(100px); border-radius: 50%; opacity: 0.3;
+        }
+        .case-title { font-size: 1.8rem; font-weight: 700; color: #fff; margin-bottom: 20px; position: relative; z-index: 1; }
+        .case-text { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 25px; position: relative; z-index: 1; }
+        .case-results { display: flex; gap: 30px; margin-top: 30px; flex-wrap: wrap; position: relative; z-index: 1; }
+        .case-result { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); padding: 20px 30px; border-radius: 12px; text-align: center; flex: 1; transition: transform 0.3s; }
+        .case-result:hover { transform: scale(1.05); }
+        .case-result span { display: block; font-size: 2.5rem; font-weight: 800; color: var(--accent); font-family: var(--mono); }
+        .case-result p { font-size: 0.9rem; color: var(--text-muted); margin-top: 5px; }
 
-        /* Certificaciones y Educación (Estilo Diogo Correia - Timeline) */
+        /* Certificaciones y Educación */
         .cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-        .cert-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 12px; }
-        .cert-header { display: flex; align-items: center; gap: 16px; }
-        .cert-icon { width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; background: #222; flex-shrink: 0; }
-        .cert-info h4 { font-size: 1.1rem; color: #fff; margin-bottom: 4px; }
-        .cert-info p { font-size: 0.9rem; color: var(--text-muted); }
-        .cert-desc { font-size: 0.85rem; color: #aaa; border-top: 1px solid #333; padding-top: 10px; }
+        .cert-card { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border); 
+            border-radius: 16px; 
+            padding: 30px; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px;
+            transition: border-color 0.3s;
+        }
+        .cert-card:hover { border-color: #333; }
+        .cert-header { display: flex; align-items: center; gap: 20px; }
+        .cert-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; background: rgba(255,255,255,0.05); flex-shrink: 0; }
+        .cert-info h4 { font-size: 1.2rem; color: #fff; margin-bottom: 6px; }
+        .cert-info p { font-size: 0.95rem; color: var(--text-muted); }
+        .cert-desc { font-size: 0.9rem; color: #aaa; border-top: 1px solid #333; padding-top: 15px; }
         
-        .cert-card.locked .cert-icon { filter: grayscale(100%); opacity: 0.5; }
-        .cert-card.locked .cert-info h4, .cert-card.locked .cert-info p { color: #666; }
+        .cert-card.locked { opacity: 0.6; }
+        .cert-card.locked .cert-icon { filter: grayscale(100%); }
+        
+        /* Efecto de Interactividad */
+        .cert-card.locked:hover { animation: float 2s infinite; }
 
-        footer { text-align: center; padding-top: 40px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
+        footer { text-align: center; padding-top: 50px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         @media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } .cert-grid { grid-template-columns: 1fr; } }
         @media (max-width: 600px) { h1 { font-size: 2.5rem; } .projects-grid { grid-template-columns: 1fr; } .impact-grid { gap: 30px; } }
     </style>
@@ -137,10 +199,10 @@
 
     <nav class="navbar">
         <div class="nav-links">
-            <a href="#projects">Projects</a>
-            <a href="#case-study">Case Study</a>
-            <a href="#certs">Certifications</a>
-            <a href="#education">Education</a>
+            <a href="#projects">.projects</a>
+            <a href="#case-study">.case_study</a>
+            <a href="#certs">.certifications</a>
+            <a href="#education">.education</a>
         </div>
     </nav>
 
@@ -156,7 +218,7 @@
             <div class="social-links">
                 <a href="https://github.com/ortizdelgadojohanjose04-ai" target="_blank" class="btn-link">GitHub</a>
                 <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank" class="btn-link">LinkedIn</a>
-                <a href="https://apify.com/johandev_04" target="_blank" class="btn-link">Apify Store (6+ Actors)</a>
+                <a href="https://apify.com/johandev_04" target="_blank" class="btn-link">Apify Store</a>
             </div>
         </header>
 
