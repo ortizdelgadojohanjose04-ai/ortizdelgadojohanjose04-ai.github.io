@@ -29,7 +29,7 @@
         }
 
         .container {
-            max-width: 1100px; /* Más ancho para que quepan más columnas */
+            max-width: 1100px;
             margin: 0 auto;
             padding: 80px 24px;
         }
@@ -81,6 +81,7 @@
             justify-content: center;
             gap: 16px;
             flex-wrap: wrap;
+            margin-bottom: 60px;
         }
 
         .btn-link {
@@ -102,6 +103,55 @@
             border-color: var(--accent);
             background: rgba(59, 130, 246, 0.05);
             transform: translateY(-2px);
+        }
+
+        /* About / Stats Section */
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat-item {
+            background: #171717;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
 
         /* Sección de Tech Stack */
@@ -146,10 +196,10 @@
             color: #ffffff;
         }
 
-        /* GRID DE PROYECTOS (El cambio clave) */
+        /* GRID DE PROYECTOS (Estilo Libro) */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Se adapta automáticamente */
+            grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
             gap: 24px;
             animation: fadeIn 1s ease-out;
         }
@@ -196,7 +246,7 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             margin-bottom: 20px;
-            flex-grow: 1; /* Empuja los tags y botones hacia abajo */
+            flex-grow: 1;
         }
 
         .project-tags {
@@ -250,9 +300,16 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @media (max-width: 768px) {
+        /* Responsive */
+        @media (max-width: 900px) {
+            .projects-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-section { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 600px) {
             h1 { font-size: 2.5rem; }
             .projects-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -275,6 +332,39 @@
             </div>
         </header>
 
+        <!-- Nueva sección About / Stats -->
+        <div class="about-section">
+            <div class="about-text">
+                <h3>About Me</h3>
+                <p>
+                    I am a Systems Engineer specialized in building high-performance data extraction tools. 
+                    I focus on creating robust solutions that businesses can rely on for their data pipelines.
+                </p>
+                <p>
+                    My work on the Apify Store is centered on reliability: no proxies failing, no cookies blocked, 
+                    just clean, structured data ready for AI and sales teams.
+                </p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">6+</span>
+                    <span class="stat-label">Published Actors</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">99%</span>
+                    <span class="stat-label">Success Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">B2B</span>
+                    <span class="stat-label">Data Focus</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Reliability</span>
+                </div>
+            </div>
+        </div>
+
         <div class="section-title">Technical Stack</div>
         <div class="skills">
             <span class="skill">Python</span>
@@ -289,6 +379,8 @@
         </div>
 
         <div class="section-title">Published Software (Apify Store)</div>
+        
+        <!-- El Grid de 3 columnas -->
         <div class="projects-grid">
             
             <!-- Project 1 -->
