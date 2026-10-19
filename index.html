@@ -1,249 +1,257 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Johan Ortiz | Systems Engineer & Data Extraction</title>
     <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-purple: #bc8cff;
+            --accent-green: #3fb950;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #0d1117;
-            color: #f0f6fc;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
             padding: 40px 20px;
             display: flex;
             justify-content: center;
         }
-        .container { max-width: 900px; width: 100%; }
-        .perfil {
-            text-align: center;
-            padding: 40px 0;
-            border-bottom: 1px solid #30363d;
+        .container { max-width: 850px; width: 100%; }
+        
+        /* Header / Profile */
+        .header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
+            margin-bottom: 40px;
         }
-        .perfil h1 {
-            font-size: 2.8rem;
-            background: linear-gradient(135deg, #58a6ff, #9e6af3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .perfil .titulo {
-            font-size: 1.3rem;
-            color: #8b949e;
-            margin: 10px 0;
-        }
-        .perfil .descripcion {
-            color: #8b949e;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        .perfil .links a {
-            color: #58a6ff;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 1.1rem;
-        }
-        .perfil .links a:hover { text-decoration: underline; }
-        .habilidades {
-            padding: 30px 0;
-            border-bottom: 1px solid #30363d;
-        }
-        .habilidades h2 {
-            font-size: 1.8rem;
-            color: #f0f6fc;
-            margin-bottom: 20px;
-        }
-        .habilidades .badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        .habilidades .badge {
-            background: #161b22;
-            border: 1px solid #30363d;
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: #f0f6fc;
-        }
-        .badge.azul { border-color: #58a6ff; color: #58a6ff; }
-        .badge.morado { border-color: #9e6af3; color: #9e6af3; }
-        .badge.verde { border-color: #238636; color: #238636; }
-        .badge.naranja { border-color: #f0883e; color: #f0883e; }
-        .proyectos {
-            padding: 30px 0;
-            border-bottom: 1px solid #30363d;
-        }
-        .proyectos h2 {
-            font-size: 1.8rem;
-            color: #f0f6fc;
-            margin-bottom: 20px;
-        }
-        .proyecto {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            transition: border-color 0.3s;
-        }
-        .proyecto:hover { border-color: #58a6ff; }
-        .proyecto h3 {
-            font-size: 1.3rem;
-            color: #58a6ff;
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: #ffffff;
             margin-bottom: 5px;
         }
-        .proyecto p {
-            color: #8b949e;
-            line-height: 1.6;
-            margin: 8px 0;
+        .header h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 15px;
         }
-        .proyecto .tecnologias {
+        .header p {
+            max-width: 700px;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        .links a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        .links a:hover { color: #ffffff; text-decoration: underline; }
+
+        /* Sections */
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Tech Stack */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        .skill-badge {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+        .skill-badge.main { border-color: var(--accent-blue); color: var(--accent-blue); }
+        .skill-badge.secondary { border-color: var(--accent-purple); color: var(--accent-purple); }
+        
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 24px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .project-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin: 10px 0;
+            margin-bottom: 20px;
         }
-        .proyecto .tecnologia {
-            background: #0d1117;
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            color: #8b949e;
-            border: 1px solid #30363d;
+        .tag {
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            background-color: rgba(88, 166, 255, 0.1);
+            color: var(--accent-blue);
+            border-radius: 12px;
+            font-weight: 600;
         }
-        .proyecto .enlaces a {
-            color: #58a6ff;
+        .project-link {
+            display: inline-block;
+            color: var(--text-main);
             text-decoration: none;
-            margin-right: 15px;
-            font-size: 0.95rem;
-        }
-        .proyecto .enlaces a:hover { text-decoration: underline; }
-        .contacto {
-            padding: 30px 0;
-            text-align: center;
-        }
-        .contacto h2 { font-size: 1.8rem; margin-bottom: 15px; }
-        .contacto p { color: #8b949e; }
-        .contacto a {
-            color: #58a6ff;
-            text-decoration: none;
-            font-size: 1.1rem;
-        }
-        .contacto a:hover { text-decoration: underline; }
-        .footer {
-            margin-top: 30px;
-            padding: 20px;
-            text-align: center;
-            color: #8b949e;
+            font-weight: 600;
             font-size: 0.9rem;
-            border-top: 1px solid #30363d;
-            width: 100%;
-            max-width: 1300px;
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background 0.2s;
         }
-        @media (max-width: 600px) {
-            .perfil h1 { font-size: 2rem; }
-            .badges { justify-content: center; }
+        .project-link:hover {
+            background-color: var(--border-color);
+            color: #ffffff;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
     <div class="container">
-
-        <!-- PERFIL -->
-        <section class="perfil">
+        
+        <!-- HEADER -->
+        <header class="header">
             <h1>Johan Ortiz</h1>
-            <p class="titulo">Systems Engineer & Fullstack Developer</p>
-            <p class="descripcion">
-                Backend developer specialized in data extraction and AI-ready data pipelines. 
-                Creator of high-performance web scrapers. Currently building and publishing tools for the Apify Store.
+            <h2>Systems Engineer & Data Extraction Specialist</h2>
+            <p>
+                Backend developer specializing in building high-performance web scrapers, 
+                data extraction pipelines, and AI-ready APIs. Focused on reliability, 
+                scalable architecture, and Pay-Per-Event monetization.
             </p>
             <div class="links">
                 <a href="https://github.com/ortizdelgadojohanjose04-ai" target="_blank">GitHub</a>
                 <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank">LinkedIn</a>
-                <a href="https://apify.com/johandev_04" target="_blank">Apify Profile</a>
+                <a href="https://apify.com/johandev_04" target="_blank">Apify Publisher Profile</a>
                 <a href="mailto:ortizdelgadojohanjose04@gmail.com">Contact</a>
             </div>
-        </section>
+        </header>
 
-        <!-- HABILIDADES -->
-        <section class="habilidades">
-            <h2>Tech Stack</h2>
-            <div class="badges">
-                <span class="badge azul">Python</span>
-                <span class="badge azul">FastAPI</span>
-                <span class="badge morado">React</span>
-                <span class="badge verde">PostgreSQL</span>
-                <span class="badge naranja">Git / GitHub</span>
-                <span class="badge azul">OpenAI API</span>
-                <span class="badge morado">HTML / CSS</span>
-                <span class="badge verde">JavaScript</span>
-                <span class="badge naranja">C#</span>
-                <span class="badge azul">Apify SDK</span>
-            </div>
-        </section>
+        <!-- TECH STACK -->
+        <div class="section-title">Technical Stack</div>
+        <div class="skills-container">
+            <span class="skill-badge main">Python</span>
+            <span class="skill-badge main">FastAPI</span>
+            <span class="skill-badge main">Apify SDK</span>
+            <span class="skill-badge secondary">C#</span>
+            <span class="skill-badge secondary">React</span>
+            <span class="skill-badge">PostgreSQL</span>
+            <span class="skill-badge">Web Scraping</span>
+            <span class="skill-badge">Playwright</span>
+            <span class="skill-badge">Godot Engine</span>
+        </div>
 
-        <!-- PROYECTOS -->
-        <section class="proyectos">
-            <h2>Published Software</h2>
-
-            <!-- PROYECTO 1: APIFY GOOGLE TRENDS -->
-            <div class="proyecto">
-                <h3>Google Trends Scraper & API</h3>
-                <p>
-                    High-performance web scraper that extracts Google Trends data without 429 blocks. 
-                    Uses residential proxies, session management, and a two-step widget token flow. 
-                    Published and monetized on the Apify Store (Pay-Per-Event).
+        <!-- PROJECTS -->
+        <div class="section-title">Production Software (Apify Store)</div>
+        <div class="projects-grid">
+            
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-title">Google Trends Scraper & API</div>
+                <p class="project-desc">
+                    High-performance extraction of Google Trends data (interest over time, related queries). 
+                    Implements advanced session management, NID cookie rotation, and residential proxies 
+                    to bypass 429 rate limits with a +99% success rate.
                 </p>
-                <div class="tecnologias">
-                    <span class="tecnologia">Python</span>
-                    <span class="tecnologia">Apify</span>
-                    <span class="tecnologia">Web Scraping</span>
-                    <span class="tecnologia">Data Extraction</span>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Web Scraping</span>
+                    <span class="tag">API</span>
                 </div>
-                <div class="enlaces">
-                    <a href="https://apify.com/johandev_04/google-trends-scraper" target="_blank">View on Apify Store</a>
-                </div>
+                <a href="https://apify.com/johandev_04/google-trends-scraper" target="_blank" class="project-link">View on Apify Store →</a>
             </div>
 
-            <!-- PROYECTO 2: APIFY YOUTUBE -->
-            <div class="proyecto">
-                <h3>YouTube Transcript Scraper & API</h3>
-                <p>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-title">YouTube Transcript Scraper & API</div>
+                <p class="project-desc">
                     Reliable API to extract full transcripts from YouTube videos. Designed for AI training 
-                    and NLP analysis. High success rate, returning structured JSON with timestamps and text. 
-                    Published and monetized on the Apify Store.
+                    and NLP analysis. Handles IP bans and rate limits efficiently, returning structured JSON 
+                    with precise timestamps and text segments.
                 </p>
-                <div class="tecnologias">
-                    <span class="tecnologia">Python</span>
-                    <span class="tecnologia">Apify</span>
-                    <span class="tecnologia">NLP</span>
-                    <span class="tecnologia">API</span>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">NLP</span>
+                    <span class="tag">Data Extraction</span>
                 </div>
-                <div class="enlaces">
-                    <a href="https://apify.com/johandev_04/youtube-transcript-scraper" target="_blank">View on Apify Store</a>
-                </div>
+                <a href="https://apify.com/johandev_04/youtube-transcript-scraper" target="_blank" class="project-link">View on Apify Store →</a>
             </div>
 
-        </section>
-
-        <!-- CONTACTO -->
-        <section class="contacto">
-            <h2>Let's Connect</h2>
-            <p>If you want to collaborate or have an opportunity, feel free to reach out:</p>
-            <br>
-            <a href="mailto:ortizdelgadojohanjose04@gmail.com">ortizdelgadojohanjose04@gmail.com</a>
-            <br><br>
-            <div class="links">
-                <a href="https://github.com/ortizdelgadojohanjose04-ai" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank">LinkedIn</a>
-                <a href="https://apify.com/johandev_04" target="_blank">Apify</a>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-title">Company Enrichment API</div>
+                <p class="project-desc">
+                    B2B data enrichment tool that takes company domains and extracts public data: 
+                    meta descriptions, tech stack detection, and social media links. Optimized for 
+                    automated sales and marketing pipelines.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">B2B</span>
+                    <span class="tag">Data Pipeline</span>
+                </div>
+                <a href="https://apify.com/johandev_04/company-enricher" target="_blank" class="project-link">View on Apify Store →</a>
             </div>
-            <p style="margin-top: 20px; font-size: 0.8rem; color: #6e7681;">
-                Built by Johan Ortiz
-            </p>
-        </section>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>© 2026 Johan Ortiz. Building reliable data pipelines.</p>
+        </footer>
 
     </div>
 </body>
