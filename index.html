@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Johan Ortiz | Systems Engineer & Data Extraction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -13,6 +15,7 @@
             --text-main: #ededed;
             --text-muted: #a1a1aa;
             --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.2);
             --font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
@@ -29,6 +32,7 @@
             background-repeat: no-repeat;
         }
 
+        /* Navegación Fija (Estilo Brittany Chiang) */
         .navbar {
             position: fixed;
             top: 0; left: 0; width: 100%;
@@ -50,47 +54,67 @@
         }
         .nav-links a:hover { color: var(--accent); }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 100px 24px 40px 24px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 120px 24px 60px 24px; }
 
-        header { text-align: center; margin-bottom: 60px; animation: fadeIn 0.8s ease-out; }
-        .badge-available { display: inline-block; background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 4px 12px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; border: 1px solid rgba(16, 185, 129, 0.2); }
-        h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 12px; color: #ffffff; }
-        h2 { font-size: 1.5rem; font-weight: 500; color: var(--text-muted); margin-bottom: 24px; }
-        .bio { font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 30px auto; }
-        .social-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
-        .btn-link { display: inline-flex; align-items: center; background: var(--card-bg); border: 1px solid var(--border); color: var(--text-main); text-decoration: none; padding: 10px 20px; border-radius: 8px; font-weight: 500; transition: all 0.2s; }
-        .btn-link:hover { border-color: var(--accent); transform: translateY(-2px); }
+        /* Hero Section (Como Alex Naraghi - minimalista) */
+        header { text-align: center; margin-bottom: 80px; animation: fadeIn 0.8s ease-out; }
+        .badge-available { display: inline-block; background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 6px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 24px; border: 1px solid rgba(16, 185, 129, 0.2); text-transform: uppercase; letter-spacing: 1px; }
+        h1 { font-size: 4rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 15px; color: #ffffff; }
+        h2 { font-size: 1.5rem; font-weight: 400; color: var(--text-muted); margin-bottom: 30px; }
+        .bio { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px auto; }
+        
+        .social-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 60px; }
+        .btn-link { display: inline-flex; align-items: center; background: var(--card-bg); border: 1px solid var(--border); color: var(--text-main); text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 500; transition: all 0.3s; }
+        .btn-link:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 5px 15px var(--accent-glow); }
 
-        .impact-grid { display: flex; justify-content: center; gap: 40px; margin-bottom: 80px; flex-wrap: wrap; }
+        /* Impacto (Estilo Tom Weightman) */
+        .impact-grid { display: flex; justify-content: center; gap: 60px; margin-bottom: 100px; flex-wrap: wrap; }
         .impact-item { text-align: center; }
-        .impact-number { font-size: 2.5rem; font-weight: 800; color: var(--accent); display: block; }
+        .impact-number { font-size: 3rem; font-weight: 800; color: var(--accent); display: block; }
         .impact-label { color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        section { margin-bottom: 80px; scroll-margin-top: 80px; }
-        .section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 30px; display: flex; align-items: center; gap: 10px; color: #ffffff; }
-        .section-title::before { content: ''; display: block; width: 20px; height: 2px; background: var(--accent); border-radius: 2px; }
+        /* Secciones */
+        section { margin-bottom: 100px; scroll-margin-top: 100px; }
+        .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; display: flex; align-items: center; gap: 15px; color: #ffffff; }
+        .section-title::before { content: ''; display: block; width: 30px; height: 3px; background: var(--accent); border-radius: 3px; }
 
-        /* Proyectos */
+        /* Proyectos (Estilo La Playa - Grid visual) */
         .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .project-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 24px; transition: all 0.3s; display: flex; flex-direction: column; }
-        .project-card:hover { border-color: #444; transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .project-title { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
-        .project-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px; flex-grow: 1; }
-        .project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+        .project-card { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border); 
+            border-radius: 16px; 
+            padding: 24px; 
+            transition: all 0.3s; 
+            display: flex; 
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .project-card:hover { border-color: #444; transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
+        .project-card:hover::before { opacity: 1; }
+        .project-title { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+        .project-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; flex-grow: 1; }
+        .project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
         .tag { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; color: #ccc; }
         .btn-project { display: block; text-align: center; color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; padding: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.2s; }
         .btn-project:hover { background: var(--accent); color: #000; }
 
-        /* Caso de Estudio / Servicios (Para llenar el vacío) */
+        /* Caso de Estudio (Estilo Leland Jansen - con resultados) */
         .case-study { background: linear-gradient(145deg, #1a1a1a, #111); border: 1px solid #333; border-radius: 16px; padding: 40px; }
         .case-title { font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 15px; }
         .case-text { color: var(--text-muted); font-size: 1rem; margin-bottom: 20px; }
         .case-results { display: flex; gap: 30px; margin-top: 20px; flex-wrap: wrap; }
         .case-result { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); padding: 15px 25px; border-radius: 8px; text-align: center; flex: 1; }
-        .case-result span { display: block; font-size: 1.8rem; font-weight: 800; color: var(--accent); }
+        .case-result span { display: block; font-size: 2rem; font-weight: 800; color: var(--accent); }
         .case-result p { font-size: 0.85rem; color: var(--text-muted); margin-top: 5px; }
 
-        /* Certificaciones y Educación */
+        /* Certificaciones y Educación (Estilo Diogo Correia - Timeline) */
         .cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
         .cert-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 12px; }
         .cert-header { display: flex; align-items: center; gap: 16px; }
@@ -106,7 +130,7 @@
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         @media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } .cert-grid { grid-template-columns: 1fr; } }
-        @media (max-width: 600px) { h1 { font-size: 2.5rem; } .projects-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 600px) { h1 { font-size: 2.5rem; } .projects-grid { grid-template-columns: 1fr; } .impact-grid { gap: 30px; } }
     </style>
 </head>
 <body>
@@ -127,12 +151,12 @@
             <h2>Systems Engineer & Data Extraction Specialist</h2>
             <p class="bio">
                 I build production-ready software for data extraction and AI pipelines. 
-                Focused on reliability, scalable architecture, and automated monetization.
+                Creator of 6+ high-performance Actors on the Apify Store.
             </p>
             <div class="social-links">
                 <a href="https://github.com/ortizdelgadojohanjose04-ai" target="_blank" class="btn-link">GitHub</a>
                 <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank" class="btn-link">LinkedIn</a>
-                <a href="https://apify.com/johandev_04" target="_blank" class="btn-link">Apify Publisher Profile</a>
+                <a href="https://apify.com/johandev_04" target="_blank" class="btn-link">Apify Store (6+ Actors)</a>
             </div>
         </header>
 
@@ -143,7 +167,6 @@
             <div class="impact-item"><span class="impact-number">24/7</span><span class="impact-label">Reliability</span></div>
         </div>
 
-        <!-- SECCIÓN 1: PROYECTOS -->
         <section id="projects">
             <div class="section-title">Published Software (Apify Store)</div>
             <div class="projects-grid">
@@ -151,61 +174,59 @@
                     <div class="project-title">LinkedIn Company Scraper</div>
                     <p class="project-desc">Extract company data using Google Search. 100% reliable, no cookies.</p>
                     <div class="project-tags"><span class="tag">Python</span><span class="tag">B2B</span></div>
-                    <a href="https://apify.com/johandev_04/linkedin-company-scraper" class="btn-project">Probar en Apify</a>
+                    <a href="https://apify.com/johandev_04/linkedin-company-scraper" class="btn-project">Try on Apify</a>
                 </div>
                 <div class="project-card">
                     <div class="project-title">Email Validator API</div>
                     <p class="project-desc">Validate emails with syntax checks, MX records, and disposable detection.</p>
                     <div class="project-tags"><span class="tag">Python</span><span class="tag">Email</span></div>
-                    <a href="https://apify.com/johandev_04/email-validator" class="btn-project">Probar en Apify</a>
+                    <a href="https://apify.com/johandev_04/email-validator" class="btn-project">Try on Apify</a>
                 </div>
                 <div class="project-card">
                     <div class="project-title">B2B Email Extractor</div>
                     <p class="project-desc">Extracts business emails from domains. Filters out blocked sites.</p>
                     <div class="project-tags"><span class="tag">Python</span><span class="tag">Lead Gen</span></div>
-                    <a href="https://apify.com/johandev_04/b2b-email-extractor" class="btn-project">Probar en Apify</a>
+                    <a href="https://apify.com/johandev_04/b2b-email-extractor" class="btn-project">Try on Apify</a>
                 </div>
                 <div class="project-card">
                     <div class="project-title">Company Enrichment API</div>
                     <p class="project-desc">Enriches domains with tech stack, descriptions, and social links.</p>
                     <div class="project-tags"><span class="tag">Python</span><span class="tag">Pipeline</span></div>
-                    <a href="https://apify.com/johandev_04/company-enricher" class="btn-project">Probar en Apify</a>
+                    <a href="https://apify.com/johandev_04/company-enricher" class="btn-project">Try on Apify</a>
                 </div>
                 <div class="project-card">
                     <div class="project-title">Google Trends Scraper</div>
                     <p class="project-desc">High-performance extraction bypassing 429 limits. +99% success rate.</p>
                     <div class="project-tags"><span class="tag">Python</span><span class="tag">API</span></div>
-                    <a href="https://apify.com/johandev_04/google-trends-scraper" class="btn-project">Probar en Apify</a>
+                    <a href="https://apify.com/johandev_04/google-trends-scraper" class="btn-project">Try on Apify</a>
                 </div>
                 <div class="project-card">
                     <div class="project-title">YouTube Transcript Scraper</div>
                     <p class="project-desc">Reliable extraction of YouTube transcripts for AI training and NLP.</p>
                     <div class="project-tags"><span class="tag">Python</span><span class="tag">NLP</span></div>
-                    <a href="https://apify.com/johandev_04/youtube-transcript-scraper" class="btn-project">Probar en Apify</a>
+                    <a href="https://apify.com/johandev_04/youtube-transcript-scraper" class="btn-project">Try on Apify</a>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 2: CASO DE ESTUDIO (Para llenar el vacío) -->
         <section id="case-study">
             <div class="section-title">Case Study: B2B Lead Enrichment Pipeline</div>
             <div class="case-study">
-                <div class="case-title">Cómo una agencia de ventas usó mis Actores para generar 10,000 leads en 48 horas</div>
+                <div class="case-title">How a sales agency used my Actors to generate 10,000 leads in 48 hours</div>
                 <p class="case-text">
-                    Una agencia de marketing digital necesitaba una lista masiva de empresas de tecnología en Latinoamérica para una campaña de outbound sales. El proceso manual les tomaba semanas.
+                    A digital marketing agency needed a massive list of tech companies in LatAm for an outbound sales campaign. The manual process took them weeks.
                 </p>
                 <p class="case-text">
-                    Usando mi <strong>Company Enrichment API</strong> y mi <strong>B2B Email Extractor</strong>, automatizaron la extracción de dominios, la validación de correos y la detección de stacks tecnológicos. El resultado: una lista limpia y enriquecida, lista para importar a su CRM.
+                    Using my <strong>Company Enrichment API</strong> and <strong>B2B Email Extractor</strong>, they automated domain extraction, email validation, and tech stack detection. The result: a clean, enriched list ready to import into their CRM.
                 </p>
                 <div class="case-results">
-                    <div class="case-result"><span>10,000</span><p>Leads generados</p></div>
-                    <div class="case-result"><span>48h</span><p>Tiempo de ejecución</p></div>
-                    <div class="case-result"><span>99%</span><p>Emails válidos</p></div>
+                    <div class="case-result"><span>10,000</span><p>Leads generated</p></div>
+                    <div class="case-result"><span>48h</span><p>Execution time</p></div>
+                    <div class="case-result"><span>99%</span><p>Valid emails</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 3: CERTIFICACIONES -->
         <section id="certs">
             <div class="section-title">Certifications & Roadmap</div>
             <div class="cert-grid">
@@ -242,7 +263,6 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 4: EDUCACIÓN -->
         <section id="education">
             <div class="section-title">Education</div>
             <div class="cert-grid">
