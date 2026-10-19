@@ -1,17 +1,40 @@
-# Hi, I'm Johan Ortiz 
+# Johan Ortiz
+### Systems Engineer & Data Extraction Specialist
 
-**Systems Engineer & Fullstack Developer** | Data Extraction & AI-ready Data Pipelines.
+I build production-ready software for data extraction, web scraping, and AI pipelines. My focus is on reliability, scalable architecture, and automated monetization. 
 
-I'm a backend developer focused on building high-performance web scrapers, APIs, and data extraction tools. I create solutions designed to feed AI models and automate data workflows.
+Currently, I design and publish high-performance tools on the Apify Store, helping businesses extract data without getting blocked.
 
-## Apify Store Publisher
-I build and maintain production-ready web scrapers on the Apify platform. 
-- [Google Trends Scraper & API](https://apify.com/johandev_04/google-trends-scraper)
-- [YouTube Transcript Scraper & API](https://apify.com/johandev_04/youtube-transcript-scraper)
+[Apify Publisher Profile](https://apify.com/johandev_04) | [LinkedIn](https://linkedin.com/in/johan-ortiz-260aa0378) | [Portfolio](https://ortizdelgadojohanjose04-ai.github.io)
 
- **[Check out my full Apify Publisher Profile here](https://apify.com/johandev_04)**
+---
 
-## Tech Stack
-- **Languages:** Python (Main), C#, JavaScript
-- **Data & Backend:** FastAPI, Web Scraping (Apify, Playwright), PostgreSQL
-- **Game Dev:** Godot Engine
+### Published Software
+
+**Google Trends Scraper & API**
+High-performance extraction bypassing 429 rate limits using residential proxies and session tokens. (+99% success rate)
+`Python` `Web Scraping` `API`
+[View on Apify Store](https://apify.com/johandev_04/google-trends-scraper)
+
+**YouTube Transcript Scraper & API**
+Reliable extraction of YouTube transcripts designed for AI training and NLP analysis.
+`Python` `NLP` `Data Extraction`
+[View on Apify Store](https://apify.com/johandev_04/youtube-transcript-scraper)
+
+**Company Enrichment API**
+B2B data enrichment from company domains. Extracts tech stack, descriptions, and social links for sales pipelines.
+`Python` `B2B` `Data Pipeline`
+[View on Apify Store](https://apify.com/johandev_04/company-enricher)
+
+---
+
+### Technical Stack
+- **Languages:** Python, C#, JavaScript
+- **Backend & Data:** FastAPI, PostgreSQL, Apify SDK, Playwright, BeautifulSoup
+- **Game Development:** Godot Engine (OOP, math logic, optimization)
+
+---
+
+### Contact
+- **Email:** ortizdelgadojohanjose04@gmail.com
+- **Portfolio:** [ortizdelgadojohanjose04-ai.github.io](https://ortizdelgadojohanjose04-ai.github.io)
