@@ -9,16 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Paleta Azul + Dorado sobre fondo oscuro profundo */
-            --bg: #0a0f18; /* Gris muy oscuro con tinte azul */
-            --card-bg: rgba(20, 28, 40, 0.7); /* Fondo de tarjeta semitransparente */
-            --border: rgba(59, 130, 246, 0.2); /* Borde azul sutil */
-            --text-main: #f3f4f6; /* Blanco roto */
-            --text-muted: #9ca3af; /* Gris claro */
-            --accent-blue: #3b82f6; /* Azul brillante */
+            --bg: #0a0f18;
+            --card-bg: rgba(20, 28, 40, 0.7);
+            --border: rgba(59, 130, 246, 0.2);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-blue: #3b82f6;
             --accent-gold: #eab308; /* Dorado */
-            --accent-glow: rgba(59, 130, 246, 0.4); /* Resplandor azul */
-            --gold-glow: rgba(234, 179, 8, 0.3); /* Resplandor dorado */
+            --accent-glow: rgba(59, 130, 246, 0.4);
+            --gold-glow: rgba(234, 179, 8, 0.2);
             --font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             --mono: 'JetBrains Mono', monospace;
         }
@@ -32,7 +31,6 @@
             font-family: var(--font);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            /* Fondo con resplandor azul y dorado */
             background-image: 
                 radial-gradient(circle at 20% 0%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
                 radial-gradient(circle at 80% 0%, rgba(234, 179, 8, 0.05) 0%, transparent 40%);
@@ -90,7 +88,7 @@
             animation: pulseGlow 2s infinite;
         }
         h1 { font-size: 4.5rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 15px; color: #ffffff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-        h2 { font-size: 1.5rem; font-weight: 400; color: var(--accent-gold); margin-bottom: 30px; font-family: var(--mono); } /* Dorado para el subtítulo */
+        h2 { font-size: 1.5rem; font-weight: 400; color: var(--accent-gold); margin-bottom: 30px; font-family: var(--mono); }
         .bio { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px auto; }
         
         .social-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 80px; }
@@ -108,7 +106,7 @@
             font-family: var(--mono);
             backdrop-filter: blur(10px);
         }
-        .btn-link:hover { border-color: var(--accent-gold); transform: translateY(-2px); box-shadow: 0 5px 15px var(--gold-glow); }
+        .btn-link:hover { border-color: var(--accent-blue); transform: translateY(-2px); box-shadow: 0 5px 15px var(--accent-glow); }
 
         .impact-grid { display: flex; justify-content: center; gap: 60px; margin-bottom: 100px; flex-wrap: wrap; animation: fadeInUp 1.2s ease-out; }
         .impact-item { text-align: center; }
@@ -117,7 +115,7 @@
 
         section { margin-bottom: 100px; scroll-margin-top: 100px; animation: fadeInUp 1.2s ease-out; }
         .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; display: flex; align-items: center; gap: 15px; color: #ffffff; }
-        .section-title::before { content: ''; display: block; width: 30px; height: 3px; background: var(--accent-gold); border-radius: 3px; box-shadow: 0 0 10px var(--accent-gold); } /* Línea dorada */
+        .section-title::before { content: ''; display: block; width: 30px; height: 3px; background: var(--accent-gold); border-radius: 3px; box-shadow: 0 0 10px var(--accent-gold); }
 
         /* GRID DE PROYECTOS */
         .projects-grid {
@@ -136,14 +134,19 @@
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Sombra profunda */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
+        /* Efecto de luz azul plateada al pasar el mouse */
         .project-card::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
             opacity: 0; transition: opacity 0.3s;
         }
-        .project-card:hover { border-color: var(--accent-gold); transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.7); }
+        .project-card:hover { 
+            border-color: rgba(59, 130, 246, 0.5); /* Borde azul sutil */
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7), 0 0 20px var(--accent-glow); /* Resplandor azul plateado */
+        }
         .project-card:hover::before { opacity: 1; }
         .project-title { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
         .project-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
@@ -162,14 +165,14 @@
         .case-text { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 25px; position: relative; z-index: 1; }
         .case-results { display: flex; gap: 30px; margin-top: 30px; flex-wrap: wrap; position: relative; z-index: 1; }
         .case-result { background: rgba(59, 130, 246, 0.1); border: 1px solid var(--border); padding: 20px 30px; border-radius: 12px; text-align: center; flex: 1; transition: transform 0.3s; }
-        .case-result:hover { transform: scale(1.05); border-color: var(--accent-gold); }
+        .case-result:hover { transform: scale(1.05); border-color: var(--accent-blue); box-shadow: 0 0 15px var(--accent-glow); }
         .case-result span { display: block; font-size: 2.5rem; font-weight: 800; color: var(--accent-blue); font-family: var(--mono); }
         .case-result p { font-size: 0.9rem; color: var(--text-muted); margin-top: 5px; }
 
         /* CERTIFICACIONES Y EDUCACIÓN */
         .cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-        .cert-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 15px; transition: border-color 0.3s; backdrop-filter: blur(10px); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
-        .cert-card:hover { border-color: var(--accent-gold); transform: translateY(-4px); }
+        .cert-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 15px; transition: all 0.3s; backdrop-filter: blur(10px); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+        .cert-card:hover { border-color: rgba(59, 130, 246, 0.5); transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.6), 0 0 15px var(--accent-glow); }
         .cert-header { display: flex; align-items: center; gap: 20px; }
         .cert-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; background: rgba(59, 130, 246, 0.1); flex-shrink: 0; border: 1px solid var(--border); }
         .cert-info h4 { font-size: 1.2rem; color: #fff; margin-bottom: 6px; }
@@ -246,7 +249,6 @@
             <div class="impact-item"><span class="impact-number">24/7</span><span class="impact-label">Reliability</span></div>
         </div>
 
-        <!-- GRID DE PROYECTOS -->
         <section id="projects">
             <div class="section-title">Published Software (Apify Store)</div>
             <div class="projects-grid">
@@ -295,7 +297,6 @@
             </div>
         </section>
 
-        <!-- CASE STUDY -->
         <section id="case-study">
             <div class="section-title">Case Study: B2B Lead Enrichment Pipeline</div>
             <div class="case-study">
@@ -314,7 +315,6 @@
             </div>
         </section>
 
-        <!-- CERTIFICACIONES -->
         <section id="certs">
             <div class="section-title">Certifications & Achievements</div>
             <div class="cert-grid">
@@ -352,7 +352,6 @@
             </div>
         </section>
 
-        <!-- EDUCACIÓN -->
         <section id="education">
             <div class="section-title">Education</div>
             <div class="cert-grid">
@@ -381,13 +380,11 @@
             </div>
         </section>
 
-        <!-- CONTACTO 3D -->
         <section id="contact">
             <div class="contact-section">
                 <div class="contact-title">Let's Build Something Together</div>
                 <p class="contact-text">Have a project in mind or want to collaborate? I'm just one message away.</p>
                 <div class="contact-buttons">
-                    <!-- El enlace mailto: ahora debería funcionar si tienes una app de correo configurada -->
                     <a href="mailto:ortizdelgadojohanjose04@gmail.com?subject=Project%20Inquiry" class="btn-link">Send Email</a>
                     <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank" class="btn-link">Message on LinkedIn</a>
                 </div>
