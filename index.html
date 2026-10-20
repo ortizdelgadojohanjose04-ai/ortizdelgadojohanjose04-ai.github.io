@@ -34,7 +34,6 @@
             overflow-x: hidden;
         }
 
-        /* Animaciones Globales */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -44,13 +43,7 @@
             70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
             100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
         }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
 
-        /* Navegación Fija */
         .navbar {
             position: fixed;
             top: 0; left: 0; width: 100%;
@@ -75,7 +68,6 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 120px 24px 60px 24px; }
 
-        /* Hero Section */
         header { text-align: center; margin-bottom: 80px; animation: fadeInUp 1s ease-out; }
         .badge-available { 
             display: inline-block; 
@@ -111,18 +103,15 @@
         }
         .btn-link:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 5px 15px var(--accent-glow); }
 
-        /* Impacto */
         .impact-grid { display: flex; justify-content: center; gap: 60px; margin-bottom: 100px; flex-wrap: wrap; animation: fadeInUp 1.2s ease-out; }
         .impact-item { text-align: center; }
         .impact-number { font-size: 3rem; font-weight: 800; color: var(--accent); display: block; font-family: var(--mono); }
         .impact-label { color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Secciones */
         section { margin-bottom: 100px; scroll-margin-top: 100px; animation: fadeInUp 1.2s ease-out; }
         .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; display: flex; align-items: center; gap: 15px; color: #ffffff; }
         .section-title::before { content: ''; display: block; width: 30px; height: 3px; background: var(--accent); border-radius: 3px; }
 
-        /* Proyectos */
         .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .project-card { 
             background: var(--card-bg); 
@@ -134,7 +123,6 @@
             flex-direction: column;
             position: relative;
             overflow: hidden;
-            cursor: pointer;
         }
         .project-card::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
@@ -150,7 +138,6 @@
         .btn-project { display: block; text-align: center; color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.3s; }
         .btn-project:hover { background: var(--accent); color: #000; }
 
-        /* Caso de Estudio */
         .case-study { background: linear-gradient(145deg, #111, #0a0a0a); border: 1px solid #222; border-radius: 16px; padding: 50px; position: relative; overflow: hidden; }
         .case-study::after {
             content: ''; position: absolute; top: -50px; right: -50px; width: 200px; height: 200px;
@@ -164,18 +151,8 @@
         .case-result span { display: block; font-size: 2.5rem; font-weight: 800; color: var(--accent); font-family: var(--mono); }
         .case-result p { font-size: 0.9rem; color: var(--text-muted); margin-top: 5px; }
 
-        /* Certificaciones y Educación */
         .cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-        .cert-card { 
-            background: var(--card-bg); 
-            border: 1px solid var(--border); 
-            border-radius: 16px; 
-            padding: 30px; 
-            display: flex; 
-            flex-direction: column; 
-            gap: 15px;
-            transition: border-color 0.3s;
-        }
+        .cert-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 15px; transition: border-color 0.3s; }
         .cert-card:hover { border-color: #333; }
         .cert-header { display: flex; align-items: center; gap: 20px; }
         .cert-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; background: rgba(255,255,255,0.05); flex-shrink: 0; }
@@ -187,9 +164,6 @@
         
         .cert-card.locked { opacity: 0.6; }
         .cert-card.locked .cert-icon { filter: grayscale(100%); }
-        
-        /* Efecto de Interactividad */
-        .cert-card.locked:hover { animation: float 2s infinite; }
 
         footer { text-align: center; padding-top: 50px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
 
@@ -215,17 +189,17 @@
             <h2>Systems Engineer & Data Extraction Specialist</h2>
             <p class="bio">
                 I build production-ready software for data extraction and AI pipelines. 
-                Creator of 6+ high-performance Actors on the Apify Store.
+                Creator of 7+ high-performance Actors on the Apify Store.
             </p>
             <div class="social-links">
                 <a href="https://github.com/ortizdelgadojohanjose04-ai" target="_blank" class="btn-link">GitHub</a>
                 <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank" class="btn-link">LinkedIn</a>
-                <a href="https://apify.com/johandev_04" target="_blank" class="btn-link">Apify Store</a>
+                <a href="https://apify.com/johandev_04" target="_blank" class="btn-link">Apify Store (7+ Actors)</a>
             </div>
         </header>
 
         <div class="impact-grid">
-            <div class="impact-item"><span class="impact-number">6+</span><span class="impact-label">Published Actors</span></div>
+            <div class="impact-item"><span class="impact-number">7+</span><span class="impact-label">Published Actors</span></div>
             <div class="impact-item"><span class="impact-number">99%</span><span class="impact-label">Success Rate</span></div>
             <div class="impact-item"><span class="impact-number">B2B</span><span class="impact-label">Data Focus</span></div>
             <div class="impact-item"><span class="impact-number">24/7</span><span class="impact-label">Reliability</span></div>
@@ -270,6 +244,12 @@
                     <div class="project-tags"><span class="tag">Python</span><span class="tag">NLP</span></div>
                     <a href="https://apify.com/johandev_04/youtube-transcript-scraper" class="btn-project">Try on Apify</a>
                 </div>
+                <div class="project-card">
+                    <div class="project-title">E-commerce Price Monitor</div>
+                    <p class="project-desc">Monitors product prices from e-commerce stores. High success rate.</p>
+                    <div class="project-tags"><span class="tag">Python</span><span class="tag">E-commerce</span></div>
+                    <a href="https://apify.com/johandev_04/price-monitor" class="btn-project">Try on Apify</a>
+                </div>
             </div>
         </section>
 
@@ -294,7 +274,6 @@
         <section id="certs">
             <div class="section-title">Certifications & Achievements</div>
             <div class="cert-grid">
-                <!-- APIFY PUBLISHER (LOGRO DESBLOQUEADO) -->
                 <div class="cert-card">
                     <div class="cert-header">
                         <div class="cert-icon" style="background: rgba(59, 130, 246, 0.2); color: var(--accent);">✓</div>
@@ -306,8 +285,6 @@
                     <div class="cert-desc">Creator of high-performance web scrapers and APIs for B2B data extraction.</div>
                     <a href="https://apify.com/johandev_04" target="_blank" class="cert-link">View Apify Profile &rarr;</a>
                 </div>
-
-                <!-- AZURE (BLOQUEADA) -->
                 <div class="cert-card locked">
                     <div class="cert-header">
                         <div class="cert-icon">🔒</div>
@@ -318,8 +295,6 @@
                     </div>
                     <div class="cert-desc">Cloud concepts, Azure services, and security.</div>
                 </div>
-
-                <!-- COMPTIA SECURITY+ (BLOQUEADA) -->
                 <div class="cert-card locked">
                     <div class="cert-header">
                         <div class="cert-icon">🔒</div>
