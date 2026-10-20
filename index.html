@@ -72,7 +72,7 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 120px 24px 60px 24px; }
 
-        header { text-align: center; margin-bottom: 80px; animation: fadeInUp 1s ease-out; }
+        header { text-align: center; margin-bottom: 60px; animation: fadeInUp 1s ease-out; }
         .badge-available { 
             display: inline-block; 
             background: rgba(16, 185, 129, 0.1); 
@@ -87,11 +87,25 @@
             letter-spacing: 1px;
             animation: pulseGlow 2s infinite;
         }
+        .badge-available::before { content: "🟢 "; }
         h1 { font-size: 4.5rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 15px; color: #ffffff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-        h2 { font-size: 1.5rem; font-weight: 400; color: var(--accent-gold); margin-bottom: 30px; font-family: var(--mono); }
-        .bio { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px auto; }
+        h2 { font-size: 1.5rem; font-weight: 400; color: var(--accent-gold); margin-bottom: 20px; font-family: var(--mono); }
+        .bio { font-size: 1.1rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 20px auto; text-align: left; }
+        .bio strong { color: #fff; }
         
-        .social-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 80px; }
+        .availability { 
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; 
+            flex-wrap: wrap; 
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-family: var(--mono);
+        }
+        .availability span { display: flex; align-items: center; gap: 5px; }
+
+        .social-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 60px; }
         .btn-link { 
             display: inline-flex; 
             align-items: center; 
@@ -118,7 +132,6 @@
         .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; display: flex; align-items: center; gap: 15px; color: #ffffff; }
         .section-title::before { content: ''; display: block; width: 30px; height: 3px; background: var(--accent-gold); border-radius: 3px; box-shadow: 0 0 10px var(--accent-gold); }
 
-        /* STACK TÉCNICO */
         .stack-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -141,7 +154,6 @@
         .stack-card h4 { font-size: 1.2rem; color: #fff; margin-bottom: 10px; }
         .stack-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* GRID DE PROYECTOS */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -202,7 +214,6 @@
         .cert-link { font-size: 0.85rem; color: var(--accent-gold); text-decoration: none; margin-top: 5px; display: inline-block; font-weight: 600; }
         .cert-link:hover { text-decoration: underline; }
 
-        /* CONTACTO */
         .contact-section {
             background: linear-gradient(145deg, rgba(20, 28, 40, 0.9), rgba(10, 15, 24, 0.9));
             border: 1px solid var(--border);
@@ -248,11 +259,11 @@
 
     <nav class="navbar">
         <div class="nav-links">
+            <a href="#about">.about</a>
             <a href="#stack">.stack</a>
             <a href="#projects">projects</a>
             <a href="#case-study">case_study</a>
             <a href="#certs">certifications</a>
-            <a href="#education">education</a>
             <a href="#contact">contact</a>
         </div>
     </nav>
@@ -262,15 +273,22 @@
             <div class="badge-available">Available for new opportunities</div>
             <h1>Johan Ortiz</h1>
             <h2>Systems Engineer & Data Extraction Specialist</h2>
+            
             <p class="bio">
-                I build production-ready software for data extraction and AI pipelines. 
-                Creator of 7+ high-performance Actors on the Apify Store.
+                <strong>About Me:</strong> I'm a Systems Engineering student and backend developer with 4 years of experience building production-ready software for data extraction and AI pipelines. I focus on reliability, scalable architecture, and automated monetization. I've published 7+ high-performance Actors on the Apify Store and I'm actively building tools that help businesses extract data without getting blocked.
             </p>
+            
+            <div class="availability">
+                <span>📍 San José, Costa Rica</span>
+                <span>🌐 Remote / Hybrid / On-site</span>
+                <span>🗣️ Spanish (Native) · English (B1)</span>
+            </div>
+
             <div class="social-links">
-                <a href="https://github.com/ortizdelgadojohanjose04-ai" target="_blank" class="btn-link">GitHub</a>
-                <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank" class="btn-link">LinkedIn</a>
-                <a href="https://apify.com/johandev_04" target="_blank" class="btn-link">Apify Store (7+ Actors)</a>
-                <button onclick="copyEmail()" class="btn-link" id="emailBtn">Copy Email</button>
+                <a href="https://github.com/ortizdelgadojohanjose04-ai" target="_blank" class="btn-link">🔗 GitHub</a>
+                <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank" class="btn-link">🔗 LinkedIn</a>
+                <a href="https://apify.com/johandev_04" target="_blank" class="btn-link">🔗 Apify Store (7+ Actors)</a>
+                <button onclick="copyEmail()" class="btn-link" id="emailBtn">📬 Copy Email</button>
             </div>
         </header>
 
@@ -280,6 +298,43 @@
             <div class="impact-item"><span class="impact-number">B2B</span><span class="impact-label">Data Focus</span></div>
             <div class="impact-item"><span class="impact-number">24/7</span><span class="impact-label">Reliability</span></div>
         </div>
+
+        <!-- SOBRE MÍ -->
+        <section id="about">
+            <div class="section-title">About Me</div>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-icon" style="color: var(--accent-gold);">👤</div>
+                        <div class="cert-info">
+                            <h4>Who I Am</h4>
+                            <p>Systems Engineering student & backend developer</p>
+                        </div>
+                    </div>
+                    <div class="cert-desc">I combine my studies with real-world product development. I've built and published 7+ Actors on Apify, focusing on B2B data extraction and AI pipelines.</div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-icon" style="color: var(--accent-gold);">🎯</div>
+                        <div class="cert-info">
+                            <h4>What I Do</h4>
+                            <p>Data extraction & AI automation</p>
+                        </div>
+                    </div>
+                    <div class="cert-desc">I design and deploy high-performance web scrapers, APIs, and data pipelines that help businesses extract insights without getting blocked.</div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-icon" style="color: var(--accent-gold);">🚀</div>
+                        <div class="cert-info">
+                            <h4>What I'm Looking For</h4>
+                            <p>Remote or hybrid backend/data roles</p>
+                        </div>
+                    </div>
+                    <div class="cert-desc">I'm open to opportunities where I can apply my skills in Python, data extraction, and automation to solve real business problems.</div>
+                </div>
+            </div>
+        </section>
 
         <!-- STACK TÉCNICO -->
         <section id="stack">
@@ -297,7 +352,7 @@
                 </div>
                 <div class="stack-card">
                     <div class="stack-icon">🎮</div>
-                    <h4>Game Development</h4>
+                    <h4>Game Development (Personal Interest)</h4>
                     <p>Godot Engine (OOP, math logic, optimization)</p>
                 </div>
             </div>
@@ -369,7 +424,6 @@
             </div>
         </section>
 
-        <!-- CERTIFICACIONES -->
         <section id="certs">
             <div class="section-title">Certifications & Achievements</div>
             <div class="cert-grid">
@@ -392,7 +446,7 @@
             <div class="cert-grid">
                 <div class="cert-card">
                     <div class="cert-header">
-                        <div class="cert-icon" style="color: var(--accent-gold);">🏛️</div>
+                        <div class="cert-icon" style="color: var(--accent-gold);">🎓</div>
                         <div class="cert-info">
                             <h4>Systems Engineering</h4>
                             <p>Universidad Internacional San Isidro Labrador (UISIL)</p>
@@ -415,14 +469,13 @@
             </div>
         </section>
 
-        <!-- CONTACTO EXPLÍCITO -->
         <section id="contact">
             <div class="contact-section">
                 <div class="contact-title">Let's Build Something Together</div>
                 <p class="contact-text">Have a project in mind or want to collaborate? I'm just one message away.</p>
                 <div class="contact-buttons">
-                    <button onclick="copyEmail()" class="btn-link">Copy Email</button>
-                    <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank" class="btn-link">Message on LinkedIn</a>
+                    <button onclick="copyEmail()" class="btn-link">📬 Copy Email</button>
+                    <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank" class="btn-link">🔗 Message on LinkedIn</a>
                 </div>
                 <div class="contact-info">
                     <div class="contact-item">
