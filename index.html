@@ -118,6 +118,29 @@
         .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; display: flex; align-items: center; gap: 15px; color: #ffffff; }
         .section-title::before { content: ''; display: block; width: 30px; height: 3px; background: var(--accent-gold); border-radius: 3px; box-shadow: 0 0 10px var(--accent-gold); }
 
+        /* STACK TÉCNICO EXPLÍCITO */
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .stack-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            transition: all 0.3s;
+        }
+        .stack-card:hover { border-color: rgba(59, 130, 246, 0.5); transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.6), 0 0 15px var(--accent-glow); }
+        .stack-icon { font-size: 2rem; margin-bottom: 10px; }
+        .stack-card h4 { font-size: 1.2rem; color: #fff; margin-bottom: 10px; }
+        .stack-card p { color: var(--text-muted); font-size: 0.95rem; }
+
         /* GRID DE PROYECTOS */
         .projects-grid {
             display: grid;
@@ -178,9 +201,6 @@
         .cert-desc { font-size: 0.9rem; color: #aaa; border-top: 1px solid var(--border); padding-top: 15px; }
         .cert-link { font-size: 0.85rem; color: var(--accent-gold); text-decoration: none; margin-top: 5px; display: inline-block; font-weight: 600; }
         .cert-link:hover { text-decoration: underline; }
-        
-        .cert-card.locked { opacity: 0.6; }
-        .cert-card.locked .cert-icon { filter: grayscale(100%); }
 
         .contact-section {
             background: linear-gradient(145deg, rgba(20, 28, 40, 0.9), rgba(10, 15, 24, 0.9));
@@ -206,7 +226,7 @@
 
         footer { text-align: center; padding-top: 50px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
 
-        @media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } .cert-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } .cert-grid { grid-template-columns: 1fr; } .stack-grid { grid-template-columns: 1fr; } }
         @media (max-width: 600px) { h1 { font-size: 2.5rem; } .projects-grid { grid-template-columns: 1fr; } .impact-grid { gap: 30px; } }
     </style>
 </head>
@@ -247,36 +267,24 @@
             <div class="impact-item"><span class="impact-number">24/7</span><span class="impact-label">Reliability</span></div>
         </div>
 
-        <!-- STACK TÉCNICO EXPLÍCITO (NUEVO) -->
+        <!-- STACK TÉCNICO EXPLÍCITO (MEJORA 1) -->
         <section id="stack">
             <div class="section-title">Technical Stack</div>
-            <div class="cert-grid" style="grid-template-columns: repeat(3, 1fr);">
-                <div class="cert-card">
-                    <div class="cert-header">
-                        <div class="cert-icon" style="color: var(--accent-gold);">🐍</div>
-                        <div class="cert-info">
-                            <h4>Languages</h4>
-                            <p>Python, C#, JavaScript</p>
-                        </div>
-                    </div>
+            <div class="stack-grid">
+                <div class="stack-card">
+                    <div class="stack-icon">🐍</div>
+                    <h4>Languages</h4>
+                    <p>Python, C#, JavaScript</p>
                 </div>
-                <div class="cert-card">
-                    <div class="cert-header">
-                        <div class="cert-icon" style="color: var(--accent-gold);">⚙️</div>
-                        <div class="cert-info">
-                            <h4>Backend & Data</h4>
-                            <p>FastAPI, PostgreSQL, Apify SDK, Playwright, BeautifulSoup</p>
-                        </div>
-                    </div>
+                <div class="stack-card">
+                    <div class="stack-icon">⚙️</div>
+                    <h4>Backend & Data</h4>
+                    <p>FastAPI, PostgreSQL, Apify SDK, Playwright, BeautifulSoup</p>
                 </div>
-                <div class="cert-card">
-                    <div class="cert-header">
-                        <div class="cert-icon" style="color: var(--accent-gold);">🎮</div>
-                        <div class="cert-info">
-                            <h4>Game Development</h4>
-                            <p>Godot Engine (OOP, math logic, optimization)</p>
-                        </div>
-                    </div>
+                <div class="stack-card">
+                    <div class="stack-icon">🎮</div>
+                    <h4>Game Development</h4>
+                    <p>Godot Engine (OOP, math logic, optimization)</p>
                 </div>
             </div>
         </section>
@@ -347,6 +355,7 @@
             </div>
         </section>
 
+        <!-- CERTIFICACIONES (MEJORA 2: Solo la real) -->
         <section id="certs">
             <div class="section-title">Certifications & Achievements</div>
             <div class="cert-grid">
@@ -360,26 +369,6 @@
                     </div>
                     <div class="cert-desc">Creator of high-performance web scrapers and APIs for B2B data extraction.</div>
                     <a href="https://apify.com/johandev_04" target="_blank" class="cert-link">View Apify Profile &rarr;</a>
-                </div>
-                <div class="cert-card locked">
-                    <div class="cert-header">
-                        <div class="cert-icon">🔒</div>
-                        <div class="cert-info">
-                            <h4>Microsoft Azure Fundamentals (AZ-900)</h4>
-                            <p>Planned - Q1 2027</p>
-                        </div>
-                    </div>
-                    <div class="cert-desc">Cloud concepts, Azure services, and security.</div>
-                </div>
-                <div class="cert-card locked">
-                    <div class="cert-header">
-                        <div class="cert-icon">🔒</div>
-                        <div class="cert-info">
-                            <h4>CompTIA Security+</h4>
-                            <p>Planned - Q2 2027</p>
-                        </div>
-                    </div>
-                    <div class="cert-desc">Cybersecurity fundamentals, threats, and risk management.</div>
                 </div>
             </div>
         </section>
