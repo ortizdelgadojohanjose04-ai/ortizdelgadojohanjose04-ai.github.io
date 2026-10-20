@@ -10,7 +10,7 @@
     <style>
         :root {
             --bg: #030303;
-            --card-bg: rgba(20, 20, 20, 0.7); /* Fondo semi-transparente para profundidad */
+            --card-bg: rgba(20, 20, 20, 0.7);
             --border: rgba(255, 255, 255, 0.1);
             --text-main: #ededed;
             --text-muted: #888888;
@@ -29,7 +29,6 @@
             font-family: var(--font);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            /* Fondo con gradiente para dar profundidad */
             background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 60%);
             background-repeat: no-repeat;
             overflow-x: hidden;
@@ -114,28 +113,13 @@
         .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; display: flex; align-items: center; gap: 15px; color: #ffffff; }
         .section-title::before { content: ''; display: block; width: 30px; height: 3px; background: var(--accent); border-radius: 3px; box-shadow: 0 0 10px var(--accent); }
 
-        /* CARRUSEL HORIZONTAL (Estilo Libro) */
-        .projects-carousel {
-            display: flex;
+        /* GRID DE PROYECTOS (FILAS DE 3) */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 24px;
-            overflow-x: auto; /* Permite scroll horizontal */
-            padding-bottom: 20px;
-            scroll-snap-type: x mandatory; /* Efecto imán */
         }
-        .projects-carousel::-webkit-scrollbar {
-            height: 8px;
-        }
-        .projects-carousel::-webkit-scrollbar-thumb {
-            background: #333;
-            border-radius: 4px;
-        }
-        .projects-carousel::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
         .project-card { 
-            min-width: 320px; /* Ancho fijo para que se vean 3 a la vez */
-            scroll-snap-align: start;
             background: var(--card-bg); 
             border: 1px solid var(--border); 
             border-radius: 16px; 
@@ -145,15 +129,15 @@
             flex-direction: column;
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(10px); /* Efecto cristal */
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* Sombra base */
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
         .project-card::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
             background: linear-gradient(90deg, transparent, var(--accent), transparent);
             opacity: 0; transition: opacity 0.3s;
         }
-        .project-card:hover { border-color: #444; transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.6); } /* Efecto levantar */
+        .project-card:hover { border-color: #444; transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
         .project-card:hover::before { opacity: 1; }
         .project-title { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
         .project-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
@@ -179,7 +163,7 @@
         /* CERTIFICACIONES Y EDUCACIÓN */
         .cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
         .cert-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 15px; transition: border-color 0.3s; backdrop-filter: blur(10px); }
-        .cert-card:hover { border-color: #333; transform: translateY(-4px); } /* Efecto levantar */
+        .cert-card:hover { border-color: #333; transform: translateY(-4px); }
         .cert-header { display: flex; align-items: center; gap: 20px; }
         .cert-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; background: rgba(255,255,255,0.05); flex-shrink: 0; }
         .cert-info h4 { font-size: 1.2rem; color: #fff; margin-bottom: 6px; }
@@ -191,11 +175,33 @@
         .cert-card.locked { opacity: 0.6; }
         .cert-card.locked .cert-icon { filter: grayscale(100%); }
 
-        footer { text-align: center; padding-top: 50px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
-        .contact-buttons { display: flex; justify-content: center; gap: 20px; margin-top: 20px; flex-wrap: wrap; }
+        /* CONTACTO 3D (Profundidad) */
+        .contact-section {
+            background: linear-gradient(145deg, #111, #050505);
+            border: 1px solid #222;
+            border-radius: 24px;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            box-shadow: 
+                0 10px 30px rgba(0,0,0,0.5), 
+                inset 0 1px 0 rgba(255,255,255,0.1),
+                inset 0 -1px 0 rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+        .contact-section::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 60%);
+            z-index: 0;
+        }
+        .contact-title { font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 15px; position: relative; z-index: 1; }
+        .contact-text { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px; position: relative; z-index: 1; }
+        .contact-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; position: relative; z-index: 1; }
 
-        @media (max-width: 900px) { .cert-grid { grid-template-columns: 1fr; } }
-        @media (max-width: 600px) { h1 { font-size: 2.5rem; } .impact-grid { gap: 30px; } }
+        footer { text-align: center; padding-top: 50px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
+
+        @media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } .cert-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 600px) { h1 { font-size: 2.5rem; } .projects-grid { grid-template-columns: 1fr; } .impact-grid { gap: 30px; } }
     </style>
 </head>
 <body>
@@ -234,10 +240,10 @@
             <div class="impact-item"><span class="impact-number">24/7</span><span class="impact-label">Reliability</span></div>
         </div>
 
-        <!-- CARRUSEL HORIZONTAL -->
+        <!-- GRID DE PROYECTOS -->
         <section id="projects">
             <div class="section-title">Published Software (Apify Store)</div>
-            <div class="projects-carousel">
+            <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-title">LinkedIn Company Scraper</div>
                     <p class="project-desc">Extract company data using Google Search. 100% reliable, no cookies.</p>
@@ -369,11 +375,11 @@
             </div>
         </section>
 
-        <!-- CONTACTO -->
+        <!-- CONTACTO 3D -->
         <section id="contact">
-            <div class="section-title">Contact</div>
-            <div class="case-study" style="text-align: center;">
-                <p class="case-text" style="margin-bottom: 20px;">Have a project in mind or want to collaborate? Let's talk.</p>
+            <div class="contact-section">
+                <div class="contact-title">Let's Build Something Together</div>
+                <p class="contact-text">Have a project in mind or want to collaborate? I'm just one message away.</p>
                 <div class="contact-buttons">
                     <a href="mailto:ortizdelgadojohanjose04@gmail.com" class="btn-link">Send Email</a>
                     <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank" class="btn-link">Message on LinkedIn</a>
