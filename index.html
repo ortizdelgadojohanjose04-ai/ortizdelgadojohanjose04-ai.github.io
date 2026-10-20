@@ -118,7 +118,21 @@
         .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; display: flex; align-items: center; gap: 15px; color: #ffffff; }
         .section-title::before { content: ''; display: block; width: 30px; height: 3px; background: var(--accent-gold); border-radius: 3px; box-shadow: 0 0 10px var(--accent-gold); }
 
-        /* STACK TÉCNICO */
+        /* SOBRE MÍ (NUEVO) */
+        .about-section {
+            background: linear-gradient(145deg, rgba(20, 28, 40, 0.8), rgba(10, 15, 24, 0.8));
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 100px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        }
+        .about-title { font-size: 1.8rem; font-weight: 700; color: #fff; margin-bottom: 20px; }
+        .about-text { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; }
+        .about-text strong { color: var(--accent-gold); }
+
+        /* STACK TÉCNICO (SIN EMOJIS DECORATIVOS) */
         .stack-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -137,7 +151,6 @@
             transition: all 0.3s;
         }
         .stack-card:hover { border-color: rgba(59, 130, 246, 0.5); transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.6), 0 0 15px var(--accent-glow); }
-        .stack-icon { font-size: 2rem; margin-bottom: 10px; }
         .stack-card h4 { font-size: 1.2rem; color: #fff; margin-bottom: 10px; }
         .stack-card p { color: var(--text-muted); font-size: 0.95rem; }
 
@@ -202,7 +215,6 @@
         .cert-link { font-size: 0.85rem; color: var(--accent-gold); text-decoration: none; margin-top: 5px; display: inline-block; font-weight: 600; }
         .cert-link:hover { text-decoration: underline; }
 
-        /* CONTACTO */
         .contact-section {
             background: linear-gradient(145deg, rgba(20, 28, 40, 0.9), rgba(10, 15, 24, 0.9));
             border: 1px solid var(--border);
@@ -248,7 +260,8 @@
 
     <nav class="navbar">
         <div class="nav-links">
-            <a href="#stack">.stack</a>
+            <a href="#about">about</a>
+            <a href="#stack">stack</a>
             <a href="#projects">projects</a>
             <a href="#case-study">case_study</a>
             <a href="#certs">certifications</a>
@@ -281,22 +294,40 @@
             <div class="impact-item"><span class="impact-number">24/7</span><span class="impact-label">Reliability</span></div>
         </div>
 
-        <!-- STACK TÉCNICO -->
+        <!-- SOBRE MÍ (NUEVO) -->
+        <section id="about">
+            <div class="section-title">About Me</div>
+            <div class="about-section">
+                <p class="about-text">
+                    I am a <strong>Systems Engineer</strong> specialized in <strong>data extraction and AI-ready data pipelines</strong>. 
+                    My focus is on building production-ready software that businesses can rely on. I don't just write code; 
+                    I ship products that solve real problems.
+                </p>
+                <p class="about-text" style="margin-top: 15px;">
+                    Currently, I design and publish high-performance <strong>web scrapers and APIs on the Apify Store</strong>, 
+                    helping companies extract data without getting blocked. My work is centered on reliability, scalable architecture, 
+                    and automated monetization.
+                </p>
+                <p class="about-text" style="margin-top: 15px;">
+                    When I'm not building data pipelines, I'm exploring <strong>game development with Godot Engine and C#</strong>, 
+                    which sharpens my skills in Object-Oriented Programming and performance optimization.
+                </p>
+            </div>
+        </section>
+
+        <!-- STACK TÉCNICO (SIN EMOJIS DECORATIVOS) -->
         <section id="stack">
             <div class="section-title">Technical Stack</div>
             <div class="stack-grid">
                 <div class="stack-card">
-                    <div class="stack-icon">🐍</div>
                     <h4>Languages</h4>
                     <p>Python, C#, JavaScript</p>
                 </div>
                 <div class="stack-card">
-                    <div class="stack-icon">⚙️</div>
                     <h4>Backend & Data</h4>
                     <p>FastAPI, PostgreSQL, Apify SDK, Playwright, BeautifulSoup</p>
                 </div>
                 <div class="stack-card">
-                    <div class="stack-icon">🎮</div>
                     <h4>Game Development</h4>
                     <p>Godot Engine (OOP, math logic, optimization)</p>
                 </div>
@@ -369,7 +400,6 @@
             </div>
         </section>
 
-        <!-- CERTIFICACIONES -->
         <section id="certs">
             <div class="section-title">Certifications & Achievements</div>
             <div class="cert-grid">
@@ -392,7 +422,7 @@
             <div class="cert-grid">
                 <div class="cert-card">
                     <div class="cert-header">
-                        <div class="cert-icon" style="color: var(--accent-gold);">🎓</div>
+                        <div class="cert-icon" style="color: var(--accent-gold);">✓</div>
                         <div class="cert-info">
                             <h4>Systems Engineering</h4>
                             <p>Universidad Internacional San Isidro Labrador (UISIL)</p>
@@ -403,7 +433,7 @@
                 </div>
                 <div class="cert-card">
                     <div class="cert-header">
-                        <div class="cert-icon" style="color: var(--accent-gold);">🎓</div>
+                        <div class="cert-icon" style="color: var(--accent-gold);">✓</div>
                         <div class="cert-info">
                             <h4>Python AI Engineer</h4>
                             <p>Dev Senior Code (Dev Senior Code LLC)</p>
@@ -415,7 +445,6 @@
             </div>
         </section>
 
-        <!-- CONTACTO EXPLÍCITO -->
         <section id="contact">
             <div class="contact-section">
                 <div class="contact-title">Let's Build Something Together</div>
