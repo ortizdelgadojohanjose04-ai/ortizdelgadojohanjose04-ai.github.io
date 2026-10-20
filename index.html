@@ -118,7 +118,7 @@
         .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; display: flex; align-items: center; gap: 15px; color: #ffffff; }
         .section-title::before { content: ''; display: block; width: 30px; height: 3px; background: var(--accent-gold); border-radius: 3px; box-shadow: 0 0 10px var(--accent-gold); }
 
-        /* STACK TÉCNICO EXPLÍCITO */
+        /* STACK TÉCNICO */
         .stack-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -202,6 +202,7 @@
         .cert-link { font-size: 0.85rem; color: var(--accent-gold); text-decoration: none; margin-top: 5px; display: inline-block; font-weight: 600; }
         .cert-link:hover { text-decoration: underline; }
 
+        /* CONTACTO */
         .contact-section {
             background: linear-gradient(145deg, rgba(20, 28, 40, 0.9), rgba(10, 15, 24, 0.9));
             border: 1px solid var(--border);
@@ -223,6 +224,19 @@
         .contact-title { font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 15px; position: relative; z-index: 1; }
         .contact-text { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px; position: relative; z-index: 1; }
         .contact-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; position: relative; z-index: 1; }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        .contact-item { display: flex; align-items: center; gap: 10px; color: var(--text-muted); font-family: var(--mono); }
+        .contact-item a { color: var(--accent-gold); text-decoration: none; }
+        .contact-item a:hover { text-decoration: underline; }
 
         footer { text-align: center; padding-top: 50px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
 
@@ -267,7 +281,7 @@
             <div class="impact-item"><span class="impact-number">24/7</span><span class="impact-label">Reliability</span></div>
         </div>
 
-        <!-- STACK TÉCNICO EXPLÍCITO (MEJORA 1) -->
+        <!-- STACK TÉCNICO -->
         <section id="stack">
             <div class="section-title">Technical Stack</div>
             <div class="stack-grid">
@@ -355,7 +369,7 @@
             </div>
         </section>
 
-        <!-- CERTIFICACIONES (MEJORA 2: Solo la real) -->
+        <!-- CERTIFICACIONES -->
         <section id="certs">
             <div class="section-title">Certifications & Achievements</div>
             <div class="cert-grid">
@@ -401,6 +415,7 @@
             </div>
         </section>
 
+        <!-- CONTACTO EXPLÍCITO -->
         <section id="contact">
             <div class="contact-section">
                 <div class="contact-title">Let's Build Something Together</div>
@@ -408,6 +423,20 @@
                 <div class="contact-buttons">
                     <button onclick="copyEmail()" class="btn-link">Copy Email</button>
                     <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank" class="btn-link">Message on LinkedIn</a>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <a href="mailto:ortizdelgadojohanjose04@gmail.com">ortizdelgadojohanjose04@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>🔗</span>
+                        <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>🐙</span>
+                        <a href="https://github.com/ortizdelgadojohanjose04-ai" target="_blank">GitHub</a>
+                    </div>
                 </div>
             </div>
         </section>
