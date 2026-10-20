@@ -118,6 +118,7 @@
         .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; display: flex; align-items: center; gap: 15px; color: #ffffff; }
         .section-title::before { content: ''; display: block; width: 30px; height: 3px; background: var(--accent-gold); border-radius: 3px; box-shadow: 0 0 10px var(--accent-gold); }
 
+        /* GRID DE PROYECTOS */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -213,6 +214,7 @@
 
     <nav class="navbar">
         <div class="nav-links">
+            <a href="#stack">.stack</a>
             <a href="#projects">projects</a>
             <a href="#case-study">case_study</a>
             <a href="#certs">certifications</a>
@@ -234,7 +236,7 @@
                 <a href="https://github.com/ortizdelgadojohanjose04-ai" target="_blank" class="btn-link">GitHub</a>
                 <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank" class="btn-link">LinkedIn</a>
                 <a href="https://apify.com/johandev_04" target="_blank" class="btn-link">Apify Store (7+ Actors)</a>
-                <a href="mailto:ortizdelgadojohanjose04@gmail.com" class="btn-link">Contact Me</a>
+                <button onclick="copyEmail()" class="btn-link" id="emailBtn">Copy Email</button>
             </div>
         </header>
 
@@ -244,6 +246,40 @@
             <div class="impact-item"><span class="impact-number">B2B</span><span class="impact-label">Data Focus</span></div>
             <div class="impact-item"><span class="impact-number">24/7</span><span class="impact-label">Reliability</span></div>
         </div>
+
+        <!-- STACK TÉCNICO EXPLÍCITO (NUEVO) -->
+        <section id="stack">
+            <div class="section-title">Technical Stack</div>
+            <div class="cert-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-icon" style="color: var(--accent-gold);">🐍</div>
+                        <div class="cert-info">
+                            <h4>Languages</h4>
+                            <p>Python, C#, JavaScript</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-icon" style="color: var(--accent-gold);">⚙️</div>
+                        <div class="cert-info">
+                            <h4>Backend & Data</h4>
+                            <p>FastAPI, PostgreSQL, Apify SDK, Playwright, BeautifulSoup</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-icon" style="color: var(--accent-gold);">🎮</div>
+                        <div class="cert-info">
+                            <h4>Game Development</h4>
+                            <p>Godot Engine (OOP, math logic, optimization)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section id="projects">
             <div class="section-title">Published Software (Apify Store)</div>
@@ -381,7 +417,7 @@
                 <div class="contact-title">Let's Build Something Together</div>
                 <p class="contact-text">Have a project in mind or want to collaborate? I'm just one message away.</p>
                 <div class="contact-buttons">
-                    <button onclick="copyEmail()" class="btn-link" id="emailBtn">Copy Email</button>
+                    <button onclick="copyEmail()" class="btn-link">Copy Email</button>
                     <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank" class="btn-link">Message on LinkedIn</a>
                 </div>
             </div>
@@ -396,14 +432,16 @@
         function copyEmail() {
             const email = "ortizdelgadojohanjose04@gmail.com";
             navigator.clipboard.writeText(email).then(() => {
-                const btn = document.getElementById('emailBtn');
-                const originalText = btn.innerText;
-                btn.innerText = "✅ Copied!";
-                btn.style.borderColor = "#10b981";
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.style.borderColor = "";
-                }, 2000);
+                const btns = document.querySelectorAll('button[onclick="copyEmail()"]');
+                btns.forEach(btn => {
+                    const originalText = btn.innerText;
+                    btn.innerText = "✅ Copied!";
+                    btn.style.borderColor = "#10b981";
+                    setTimeout(() => {
+                        btn.innerText = originalText;
+                        btn.style.borderColor = "";
+                    }, 2000);
+                });
             }).catch(err => {
                 alert("Could not copy email. Here it is: " + email);
             });
