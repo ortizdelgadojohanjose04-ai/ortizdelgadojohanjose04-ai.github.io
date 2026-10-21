@@ -176,7 +176,7 @@
         .projects-carousel::-webkit-scrollbar-track { background: transparent; }
 
         .project-card { 
-            min-width: 320px; /* Ancho para que se vean 3 a la vez */
+            min-width: calc(33.333% - 16px); /* Fuerza a que se vean 3 en pantalla */
             scroll-snap-align: start;
             background: var(--card-bg); 
             border: 1px solid var(--border); 
@@ -272,10 +272,12 @@
         @media (max-width: 900px) { 
             .cert-grid { grid-template-columns: 1fr; } 
             .stack-grid { grid-template-columns: 1fr; } 
+            .project-card { min-width: 50%; }
         }
         @media (max-width: 600px) { 
             h1 { font-size: 2.5rem; } 
             .impact-grid { gap: 30px; } 
+            .project-card { min-width: 100%; }
         }
     </style>
 </head>
