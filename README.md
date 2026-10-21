@@ -1,21 +1,8 @@
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=40&pause=1000&color=EAB308&center=true&vCenter=true&width=600&lines=Johan+Ortiz;Systems+Engineer;Data+Extraction+Specialist" alt="Typing SVG" />
-</div>
+# Johan Ortiz - Professional Portfolio
 
-<div align="center">
-  <i>Building production-ready software for web scraping, data extraction, and AI-ready pipelines.</i>
-</div>
+**Systems Engineer & Data Extraction Specialist**
 
-<br/>
-
-<div align="center">
-  <a href="https://ortizdelgadojohanjose04-ai.github.io">Live Portfolio</a> •
-  <a href="https://linkedin.com/in/johan-ortiz-260aa0378">LinkedIn</a> •
-  <a href="https://apify.com/johandev_04">Apify Store</a> •
-  <a href="mailto:ortizdelgadojohanjose04@gmail.com">Email</a>
-</div>
-
-<br/>
+[Live Portfolio](https://ortizdelgadojohanjose04-ai.github.io) | [LinkedIn](https://linkedin.com/in/johan-ortiz-260aa0378) | [Apify Store](https://apify.com/johandev_04) | [Email](mailto:ortizdelgadojohanjose04@gmail.com)
 
 ---
 
@@ -55,36 +42,17 @@ A curated selection of **10 production-ready Actors** published on the Apify Sto
 
 ### 🛠️ Technical Stack
 
-<div align="center">
-
-**Languages** <br/>
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/C%23-239120?style=flat-square&logo=c-sharp&logoColor=white" />
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
-
-**Backend & Data** <br/>
-<img src="https://img.shields.io/badge/FastAPI-005571?style=flat-square&logo=fastapi" />
-<img src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white" />
-<img src="https://img.shields.io/badge/Apify-FF6A00?style=flat-square&logo=apify&logoColor=white" />
-
-**Web Scraping & Game Dev** <br/>
-<img src="https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white" />
-<img src="https://img.shields.io/badge/BeautifulSoup-43B02A?style=flat-square&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/Godot-478CBF?style=flat-square&logo=godot-engine&logoColor=white" />
-
-</div>
+- **Languages:** Python, C#, JavaScript
+- **Backend & Data:** FastAPI, PostgreSQL, Apify SDK, Playwright, BeautifulSoup
+- **Game Development:** Godot Engine (OOP, math logic, optimization)
 
 ---
 
-### 📈 GitHub Analytics
+### 📬 Contact
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ortizdelgadojohanjose04-ai&show_icons=true&theme=dark&hide_border=true&bg_color=0a0f18&title_color=eab308&icon_color=3b82f6&text_color=f3f4f6" alt="GitHub Stats" width="48%" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ortizdelgadojohanjose04-ai&theme=dark&hide_border=true&background=0a0f18&stroke=3b82f6&ring=eab308&fire=eab308&currStreakNum=f3f4f6&sideNums=f3f4f6" alt="GitHub Streak" width="48%" />
-</div>
+- **Email:** [ortizdelgadojohanjose04@gmail.com](mailto:ortizdelgadojohanjose04@gmail.com)
+- **LinkedIn:** [johan-ortiz-260aa0378](https://linkedin.com/in/johan-ortiz-260aa0378)
+- **Apify Store:** [johandev_04](https://apify.com/johandev_04)
 
 ---
-
-<div align="center">
-  <i>Built with precision by Johan Ortiz &copy; 2026</i>
-</div>
+*Built with precision by Johan Ortiz &copy; 2026*
