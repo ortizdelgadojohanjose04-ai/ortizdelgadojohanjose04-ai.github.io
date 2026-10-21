@@ -162,13 +162,22 @@
         .stack-card h4 { font-size: 1.2rem; color: #fff; margin-bottom: 10px; }
         .stack-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* GRID DE PROYECTOS (3 COLUMNAS PERFECTAS) */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        /* CARRUSEL DE PROYECTOS (ESTILO LIBRO) */
+        .projects-carousel {
+            display: flex;
             gap: 24px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
         }
+        .projects-carousel::-webkit-scrollbar { height: 8px; }
+        .projects-carousel::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        .projects-carousel::-webkit-scrollbar-track { background: transparent; }
+
         .project-card { 
+            min-width: 320px; /* Ancho para que se vean 3 a la vez */
+            scroll-snap-align: start;
             background: var(--card-bg); 
             border: 1px solid var(--border); 
             border-radius: 16px; 
@@ -263,12 +272,10 @@
         @media (max-width: 900px) { 
             .cert-grid { grid-template-columns: 1fr; } 
             .stack-grid { grid-template-columns: 1fr; } 
-            .projects-grid { grid-template-columns: repeat(2, 1fr); } 
         }
         @media (max-width: 600px) { 
             h1 { font-size: 2.5rem; } 
             .impact-grid { gap: 30px; } 
-            .projects-grid { grid-template-columns: 1fr; } 
         }
     </style>
 </head>
@@ -353,8 +360,8 @@
         <section id="projects">
             <div class="section-title">Published Software (Apify Store)</div>
             
-            <!-- GRID DE PROYECTOS (3 COLUMNAS) -->
-            <div class="projects-grid">
+            <!-- CARRUSEL DE PROYECTOS (ESTILO LIBRO) -->
+            <div class="projects-carousel">
                 <div class="project-card">
                     <div class="project-title">LinkedIn Company Scraper</div>
                     <p class="project-desc">Extract company data using Google Search. 100% reliable, no cookies.</p>
