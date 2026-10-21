@@ -162,7 +162,7 @@
         .stack-card h4 { font-size: 1.2rem; color: #fff; margin-bottom: 10px; }
         .stack-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* CONTENEDOR DESLIZABLE */
+        /* CARRUSEL DE PROYECTOS (3 COLUMNAS FIJAS) */
         .projects-carousel {
             overflow-x: auto;
             padding-bottom: 20px;
@@ -173,13 +173,11 @@
         .projects-carousel::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
         .projects-carousel::-webkit-scrollbar-track { background: transparent; }
 
-        /* El Grid con 3 columnas exactas y 2 filas visibles */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(6, 320px);/* 3 columnas */
-            grid-template-rows: repeat(2, auto);   /* 2 filas visibles */
+            grid-template-columns: repeat(6, 320px); /* 6 columnas de 320px */
             gap: 24px;
-            min-width: 1050px; /* Ancho mínimo para que quepan las 3 columnas y se deslice */
+            width: max-content;
         }
 
         .project-card { 
@@ -278,12 +276,10 @@
         @media (max-width: 900px) { 
             .cert-grid { grid-template-columns: 1fr; } 
             .stack-grid { grid-template-columns: 1fr; } 
-            .projects-grid { grid-template-columns: repeat(2, 1fr); min-width: 700px; }
         }
         @media (max-width: 600px) { 
             h1 { font-size: 2.5rem; } 
             .impact-grid { gap: 30px; } 
-            .projects-grid { grid-template-columns: 1fr; min-width: 350px; }
         }
     </style>
 </head>
@@ -308,18 +304,18 @@
             <h2>Systems Engineer & Data Extraction Specialist</h2>
             <p class="bio">
                 I build production-ready software for data extraction and AI pipelines. 
-                Creator of 10+ high-performance Actors on the Apify Store.
+                Creator of 11+ high-performance Actors on the Apify Store.
             </p>
             <div class="social-links">
                 <a href="https://github.com/ortizdelgadojohanjose04-ai" target="_blank" class="btn-link">GitHub</a>
                 <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank" class="btn-link">LinkedIn</a>
-                <a href="https://apify.com/johandev_04" target="_blank" class="btn-link">Apify Store (10+ Actors)</a>
+                <a href="https://apify.com/johandev_04" target="_blank" class="btn-link">Apify Store (11+ Actors)</a>
                 <button onclick="copyEmail()" class="btn-link" id="emailBtn">Copy Email</button>
             </div>
         </header>
 
         <div class="impact-grid">
-            <div class="impact-item"><span class="impact-number">10+</span><span class="impact-label">Published Actors</span></div>
+            <div class="impact-item"><span class="impact-number">11+</span><span class="impact-label">Published Actors</span></div>
             <div class="impact-item"><span class="impact-number">99%</span><span class="impact-label">Success Rate</span></div>
             <div class="impact-item"><span class="impact-number">B2B</span><span class="impact-label">Data Focus</span></div>
             <div class="impact-item"><span class="impact-number">24/7</span><span class="impact-label">Reliability</span></div>
@@ -371,7 +367,7 @@
             <!-- CARRUSEL DE PROYECTOS -->
             <div class="projects-carousel">
                 <div class="projects-grid">
-                    <!-- Fila 1: 3 Tarjetas -->
+                    <!-- Fila 1 -->
                     <div class="project-card">
                         <div class="project-title">LinkedIn Company Scraper</div>
                         <p class="project-desc">Extract company data using Google Search. 100% reliable, no cookies.</p>
@@ -391,7 +387,7 @@
                         <a href="https://apify.com/johandev_04/b2b-email-extractor" class="btn-project">Try on Apify</a>
                     </div>
 
-                    <!-- Fila 2: 3 Tarjetas -->
+                    <!-- Fila 2 -->
                     <div class="project-card">
                         <div class="project-title">Company Enrichment API</div>
                         <p class="project-desc">Enriches domains with tech stack, descriptions, and social links.</p>
@@ -411,7 +407,7 @@
                         <a href="https://apify.com/johandev_04/youtube-transcript-scraper" class="btn-project">Try on Apify</a>
                     </div>
 
-                    <!-- Fila 3: 3 Tarjetas -->
+                    <!-- Fila 3 -->
                     <div class="project-card">
                         <div class="project-title">E-commerce Price Monitor</div>
                         <p class="project-desc">Monitors product prices from e-commerce stores. High success rate.</p>
@@ -431,23 +427,22 @@
                         <a href="https://apify.com/johandev_04/url-to-markdown-agent" class="btn-project">Try on Apify</a>
                     </div>
 
-                    <!-- Fila 4: El Actor #10 (Se verá al hacer scroll) -->
+                    <!-- Fila 4 -->
                     <div class="project-card">
                         <div class="project-title">Smart Data Extractor (No APIs)</div>
                         <p class="project-desc">Extract structured data (titles, prices, emails, links) from any website using pure Python. Zero API keys.</p>
                         <div class="project-tags"><span class="tag">Python</span><span class="tag">No APIs</span></div>
                         <a href="https://apify.com/johandev_04/smart-data-extractor" class="btn-project">Try on Apify</a>
                     </div>
+                    <!-- NUEVA TARJETA: WEB METADATA EXTRACTOR -->
+                    <div class="project-card">
+                        <div class="project-title">Web Metadata Extractor</div>
+                        <p class="project-desc">Extract titles, descriptions, and Open Graph images from any webpage. Fast, no JavaScript required.</p>
+                        <div class="project-tags"><span class="tag">Python</span><span class="tag">SEO</span></div>
+                        <a href="https://apify.com/johandev_04/web-metadata-extractor" class="btn-project">Try on Apify</a>
+                    </div>
                 </div>
             </div>
-
-                            <!-- NUEVA TARJETA: WEB METADATA EXTRACTOR -->
-                <div class="project-card">
-                    <div class="project-title">Web Metadata Extractor</div>
-                    <p class="project-desc">Extract titles, descriptions, and Open Graph images from any webpage. Fast, no JavaScript required.</p>
-                    <div class="project-tags"><span class="tag">Python</span><span class="tag">SEO</span></div>
-                    <a href="https://apify.com/johandev_04/web-metadata-extractor" class="btn-project">Try on Apify</a>
-                </div>
         </section>
 
         <section id="case-study">
@@ -524,43 +519,4 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <span>📧</span>
-                        <a href="mailto:ortizdelgadojohanjose04@gmail.com">ortizdelgadojohanjose04@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <span>🔗</span>
-                        <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank">LinkedIn</a>
-                    </div>
-                    <div class="contact-item">
-                        <span>🐙</span>
-                        <a href="https://github.com/ortizdelgadojohanjose04-ai" target="_blank">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <p>Built with precision by Johan Ortiz &copy; 2026</p>
-        </footer>
-    </div>
-
-    <script>
-        function copyEmail() {
-            const email = "ortizdelgadojohanjose04@gmail.com";
-            navigator.clipboard.writeText(email).then(() => {
-                const btns = document.querySelectorAll('button[onclick="copyEmail()"]');
-                btns.forEach(btn => {
-                    const originalText = btn.innerText;
-                    btn.innerText = "✅ Copied!";
-                    btn.style.borderColor = "#10b981";
-                    setTimeout(() => {
-                        btn.innerText = originalText;
-                        btn.style.borderColor = "";
-                    }, 2000);
-                });
-            }).catch(err => {
-                alert("Could not copy email. Here it is: " + email);
-            });
-        }
-    </script>
-</body>
-</html>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ortizdelgadoj
