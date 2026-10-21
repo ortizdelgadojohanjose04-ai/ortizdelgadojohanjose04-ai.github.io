@@ -161,7 +161,7 @@
         .stack-card h4 { font-size: 1.2rem; color: #fff; margin-bottom: 10px; }
         .stack-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* CARRUSEL DE PROYECTOS (3 COLUMNAS FIJAS) */
+        /* CARRUSEL DE PROYECTOS (3 COLUMNAS VISIBLES + SCROLL) */
         .projects-carousel {
             overflow-x: auto;
             padding-bottom: 20px;
@@ -174,15 +174,27 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(3, 320px); /* 3 columnas exactas */
+            /* El truco: 6 columnas fijas de 320px, pero el contenedor solo mostrará las primeras 3 */
+            grid-template-columns: repeat(6, 320px); 
             gap: 24px;
-            width: max-content; /* Fuerza el ancho para activar el scroll */
+            width: max-content; /* Fuerza el ancho total para el scroll */
         }
-        
-        /* Asegura que cada tarjeta ocupe su columna exacta */
-        .project-card {
-            width: 100%;
+
+        .project-card { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border); 
+            border-radius: 16px; 
+            padding: 24px; 
+            transition: all 0.3s; 
+            display: flex; 
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            scroll-snap-align: start;
         }
+        /* ... El resto de .project-card (hover, título, etc.) se queda igual ... */
 
         .project-card { 
             background: var(--card-bg); 
