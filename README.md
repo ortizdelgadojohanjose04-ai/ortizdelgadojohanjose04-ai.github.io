@@ -2,7 +2,7 @@
 
 **Systems Engineer & Data Extraction Specialist**
 
-[Live Portfolio](https://ortizdelgadojohanjose04-ai.github.io) | [LinkedIn](https://linkedin.com/in/johan-ortiz-260aa0378) | [Apify Store](https://apify.com/johandev_04) | [Email](mailto:ortizdelgadojohanjose04@gmail.com)
+[Live Portfolio](https://ortizdelgadojohanjose04-ai.github.io) | [LinkedIn](https://linkedin.com/in/johan-ortiz-260aa0378) | [Apify Store](https://apify.com/johandev_04) | [Email](https://mail.google.com/mail/?view=cm&fs=1&to=ortizdelgadojohanjose04@gmail.com&su=Job%20Opportunity%20for%20Johan%20Ortiz) | [WhatsApp](https://api.whatsapp.com/send?phone=50687601125&text=Hola%20Johan,%20vi%20tu%20portafolio%20y%20me%20interesa%20contactarte.)
 
 ---
 
@@ -12,9 +12,9 @@ This repository contains the source code for my **professional portfolio website
 
 ---
 
-### 🚀 Featured Software (10 High-Performance Actors)
+### 🚀 Featured Software (11 High-Performance Actors)
 
-A curated selection of **10 production-ready Actors** published on the Apify Store, designed for B2B data extraction and AI pipelines.
+A curated selection of **11 production-ready Actors** published on the Apify Store, designed for B2B data extraction and AI pipelines.
 
 #### 🕸️ Web Scrapers
 | Actor | Description | Stack |
@@ -37,6 +37,7 @@ A curated selection of **10 production-ready Actors** published on the Apify Sto
 | **[AI Content Detector](https://apify.com/johandev_04/ai-content-detector)** | Detects if text is Human or AI-generated. Enterprise-grade statistical analysis. | `Python` `AI` |
 | **[URL to Markdown for AI Agents](https://apify.com/johandev_04/url-to-markdown-agent)** | Converts webpages to clean Markdown. Fail-safe for AI agents and RAG. | `Python` `RAG` |
 | **[Smart Data Extractor (No APIs)](https://apify.com/johandev_04/smart-data-extractor)** | Extracts structured data (titles, prices, emails) using pure Python. | `Python` `No APIs` |
+| **[Web Metadata Extractor](https://apify.com/johandev_04/web-metadata-extractor)** | Extracts titles, descriptions, and Open Graph images from any webpage. Fast and no JavaScript required. | `Python` `SEO` |
 
 ---
 
@@ -50,7 +51,8 @@ A curated selection of **10 production-ready Actors** published on the Apify Sto
 
 ### 📬 Contact
 
-- **Email:** [ortizdelgadojohanjose04@gmail.com](mailto:ortizdelgadojohanjose04@gmail.com)
+- **Email:** [ortizdelgadojohanjose04@gmail.com](https://mail.google.com/mail/?view=cm&fs=1&to=ortizdelgadojohanjose04@gmail.com&su=Job%20Opportunity%20for%20Johan%20Ortiz)
+- **WhatsApp:** [+506 8760-1125](https://api.whatsapp.com/send?phone=50687601125&text=Hola%20Johan,%20vi%20tu%20portafolio%20y%20me%20interesa%20contactarte.)
 - **LinkedIn:** [johan-ortiz-260aa0378](https://linkedin.com/in/johan-ortiz-260aa0378)
 - **Apify Store:** [johandev_04](https://apify.com/johandev_04)
 
