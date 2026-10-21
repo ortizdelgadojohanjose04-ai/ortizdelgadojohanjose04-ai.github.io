@@ -519,4 +519,47 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <span>📧</span>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ortizdelgadoj
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ortizdelgadojohanjose04@gmail.com&su=Job%20Opportunity%20for%20Johan%20Ortiz" target="_blank">ortizdelgadojohanjose04@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <a href="https://api.whatsapp.com/send?phone=50687601125&text=Hola%20Johan,%20vi%20tu%20portafolio%20y%20me%20interesa%20contactarte." target="_blank">+506 8760-1125 (WhatsApp)</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>🔗</span>
+                        <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>🐙</span>
+                        <a href="https://github.com/ortizdelgadojohanjose04-ai" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Built with precision by Johan Ortiz &copy; 2026</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyEmail() {
+            const email = "ortizdelgadojohanjose04@gmail.com";
+            navigator.clipboard.writeText(email).then(() => {
+                const btns = document.querySelectorAll('button[onclick="copyEmail()"]');
+                btns.forEach(btn => {
+                    const originalText = btn.innerText;
+                    btn.innerText = "✅ Copied!";
+                    btn.style.borderColor = "#10b981";
+                    setTimeout(() => {
+                        btn.innerText = originalText;
+                        btn.style.borderColor = "";
+                    }, 2000);
+                });
+            }).catch(err => {
+                alert("Could not copy email. Here it is: " + email);
+            });
+        }
+    </script>
+</body>
+</html>
