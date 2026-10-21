@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Johan Ortiz | Systems Engineer & Data Extraction</title>
     
-    <!-- Etiquetas Open Graph para LinkedIn (Imagen automática) -->
     <meta property="og:title" content="Johan Ortiz | Systems Engineer & Data Extraction" />
     <meta property="og:description" content="Portfolio of Johan Ortiz, Systems Engineer & Data Extraction Specialist. Creator of 10+ high-performance Actors on Apify." />
     <meta property="og:image" content="https://ortizdelgadojohanjose04-ai.github.io/portafolio-preview.png" />
@@ -162,22 +161,24 @@
         .stack-card h4 { font-size: 1.2rem; color: #fff; margin-bottom: 10px; }
         .stack-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* CARRUSEL DE PROYECTOS (GRID DE 3 COLUMNAS + SCROLL) */
+        /* CONTENEDOR DESLIZABLE */
         .projects-carousel {
             overflow-x: auto;
             padding-bottom: 20px;
-            scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
         }
         .projects-carousel::-webkit-scrollbar { height: 8px; }
         .projects-carousel::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
         .projects-carousel::-webkit-scrollbar-track { background: transparent; }
 
+        /* EL GRID MÁGICO (3 columnas, llena hacia abajo y desliza) */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 Columnas exactas */
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-flow: column; /* Llena hacia abajo, luego crea nueva columna */
+            grid-template-rows: repeat(2, 1fr); /* Solo 2 filas visibles */
             gap: 24px;
-            min-width: 1100px; /* Ancho mínimo para forzar el scroll hacia la derecha */
+            min-width: 1100px; /* Ancho mínimo para forzar el deslizamiento */
         }
 
         .project-card { 
@@ -192,7 +193,6 @@
             overflow: hidden;
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            scroll-snap-align: start;
         }
         .project-card::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
@@ -276,10 +276,12 @@
         @media (max-width: 900px) { 
             .cert-grid { grid-template-columns: 1fr; } 
             .stack-grid { grid-template-columns: 1fr; } 
+            .projects-grid { grid-template-columns: repeat(2, 1fr); grid-auto-flow: row; min-width: 100%; }
         }
         @media (max-width: 600px) { 
             h1 { font-size: 2.5rem; } 
             .impact-grid { gap: 30px; } 
+            .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -367,67 +369,70 @@
             <!-- CARRUSEL DE PROYECTOS -->
             <div class="projects-carousel">
                 <div class="projects-grid">
-                    <!-- Fila 1: 3 Tarjetas -->
+                    <!-- 1 -->
                     <div class="project-card">
                         <div class="project-title">LinkedIn Company Scraper</div>
                         <p class="project-desc">Extract company data using Google Search. 100% reliable, no cookies.</p>
                         <div class="project-tags"><span class="tag">Python</span><span class="tag">B2B</span></div>
                         <a href="https://apify.com/johandev_04/linkedin-company-scraper" class="btn-project">Try on Apify</a>
                     </div>
+                    <!-- 2 -->
                     <div class="project-card">
                         <div class="project-title">Email Validator API</div>
                         <p class="project-desc">Validate emails with syntax checks, MX records, and disposable detection.</p>
                         <div class="project-tags"><span class="tag">Python</span><span class="tag">Email</span></div>
                         <a href="https://apify.com/johandev_04/email-validator" class="btn-project">Try on Apify</a>
                     </div>
+                    <!-- 3 -->
                     <div class="project-card">
                         <div class="project-title">B2B Email Extractor</div>
                         <p class="project-desc">Extracts business emails from domains. Filters out blocked sites.</p>
                         <div class="project-tags"><span class="tag">Python</span><span class="tag">Lead Gen</span></div>
                         <a href="https://apify.com/johandev_04/b2b-email-extractor" class="btn-project">Try on Apify</a>
                     </div>
-
-                    <!-- Fila 2: 3 Tarjetas -->
+                    <!-- 4 -->
                     <div class="project-card">
                         <div class="project-title">Company Enrichment API</div>
                         <p class="project-desc">Enriches domains with tech stack, descriptions, and social links.</p>
                         <div class="project-tags"><span class="tag">Python</span><span class="tag">Pipeline</span></div>
                         <a href="https://apify.com/johandev_04/company-enricher" class="btn-project">Try on Apify</a>
                     </div>
+                    <!-- 5 -->
                     <div class="project-card">
                         <div class="project-title">Google Trends Scraper</div>
                         <p class="project-desc">High-performance extraction bypassing 429 limits. +99% success rate.</p>
                         <div class="project-tags"><span class="tag">Python</span><span class="tag">API</span></div>
                         <a href="https://apify.com/johandev_04/google-trends-scraper" class="btn-project">Try on Apify</a>
                     </div>
+                    <!-- 6 -->
                     <div class="project-card">
                         <div class="project-title">YouTube Transcript Scraper</div>
                         <p class="project-desc">Enterprise-grade extraction. Zero data loss, anti-ban proxies, and state persistence.</p>
                         <div class="project-tags"><span class="tag">Python</span><span class="tag">NLP</span></div>
                         <a href="https://apify.com/johandev_04/youtube-transcript-scraper" class="btn-project">Try on Apify</a>
                     </div>
-
-                    <!-- Fila 3: 3 Tarjetas -->
+                    <!-- 7 -->
                     <div class="project-card">
                         <div class="project-title">E-commerce Price Monitor</div>
                         <p class="project-desc">Monitors product prices from e-commerce stores. High success rate.</p>
                         <div class="project-tags"><span class="tag">Python</span><span class="tag">E-commerce</span></div>
                         <a href="https://apify.com/johandev_04/price-monitor" class="btn-project">Try on Apify</a>
                     </div>
+                    <!-- 8 -->
                     <div class="project-card">
                         <div class="project-title">AI Content Detector</div>
                         <p class="project-desc">Detect if text is Human or AI-generated. Enterprise-grade statistical analysis.</p>
                         <div class="project-tags"><span class="tag">Python</span><span class="tag">AI</span></div>
                         <a href="https://apify.com/johandev_04/ai-content-detector" class="btn-project">Try on Apify</a>
                     </div>
+                    <!-- 9 -->
                     <div class="project-card">
                         <div class="project-title">URL to Markdown for AI Agents</div>
                         <p class="project-desc">Convert webpages to clean Markdown. Fail-safe errors for AI agents and RAG pipelines.</p>
                         <div class="project-tags"><span class="tag">Python</span><span class="tag">AI</span></div>
                         <a href="https://apify.com/johandev_04/url-to-markdown-agent" class="btn-project">Try on Apify</a>
                     </div>
-
-                    <!-- Fila 4: El Actor #10 (Se verá al hacer scroll) -->
+                    <!-- 10 -->
                     <div class="project-card">
                         <div class="project-title">Smart Data Extractor (No APIs)</div>
                         <p class="project-desc">Extract structured data (titles, prices, emails, links) from any website using pure Python. Zero API keys.</p>
