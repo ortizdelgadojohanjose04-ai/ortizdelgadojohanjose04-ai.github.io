@@ -7,7 +7,7 @@
     
     <!-- Etiquetas Open Graph para LinkedIn (Imagen automática) -->
     <meta property="og:title" content="Johan Ortiz | Systems Engineer & Data Extraction" />
-    <meta property="og:description" content="Portfolio of Johan Ortiz, Systems Engineer & Data Extraction Specialist. Creator of 9+ high-performance Actors on Apify." />
+    <meta property="og:description" content="Portfolio of Johan Ortiz, Systems Engineer & Data Extraction Specialist. Creator of 10+ high-performance Actors on Apify." />
     <meta property="og:image" content="https://ortizdelgadojohanjose04-ai.github.io/portafolio-preview.png" />
     <meta property="og:url" content="https://ortizdelgadojohanjose04-ai.github.io" />
     <meta property="og:type" content="website" />
@@ -162,17 +162,26 @@
         .stack-card h4 { font-size: 1.2rem; color: #fff; margin-bottom: 10px; }
         .stack-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* GRID DE PROYECTOS */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+        /* CARRUSEL DE PROYECTOS (ESTILO LIBRO) */
+        .projects-carousel {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
         }
+        .projects-carousel::-webkit-scrollbar { height: 8px; }
+        .projects-carousel::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        .projects-carousel::-webkit-scrollbar-track { background: transparent; }
+
         .project-card { 
+            min-width: 320px; /* Ancho para que se vean 3 a la vez */
+            scroll-snap-align: start;
             background: var(--card-bg); 
             border: 1px solid var(--border); 
             border-radius: 16px; 
-            padding: 30px; 
+            padding: 24px; /* Un poco más pequeño */
             transition: all 0.3s; 
             display: flex; 
             flex-direction: column;
@@ -192,11 +201,11 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.7), 0 0 20px var(--accent-glow);
         }
         .project-card:hover::before { opacity: 1; }
-        .project-title { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-        .project-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
-        .project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 25px; }
-        .tag { background: rgba(59, 130, 246, 0.1); border: 1px solid var(--border); padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; color: var(--text-muted); font-family: var(--mono); }
-        .btn-project { display: block; text-align: center; color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; padding: 12px; background: rgba(59, 130, 246, 0.1); border-radius: 8px; transition: background 0.3s; border: 1px solid transparent; }
+        .project-title { font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .project-desc { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 20px; flex-grow: 1; }
+        .project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+        .tag { background: rgba(59, 130, 246, 0.1); border: 1px solid var(--border); padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; color: var(--text-muted); font-family: var(--mono); }
+        .btn-project { display: block; text-align: center; color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 10px; background: rgba(59, 130, 246, 0.1); border-radius: 8px; transition: background 0.3s; border: 1px solid transparent; }
         .btn-project:hover { background: var(--accent-blue); border-color: var(--accent-gold); color: #000; }
 
         .case-study { background: linear-gradient(145deg, rgba(20, 28, 40, 0.8), rgba(10, 15, 24, 0.8)); border: 1px solid var(--border); border-radius: 16px; padding: 50px; position: relative; overflow: hidden; backdrop-filter: blur(10px); box-shadow: 0 15px 40px rgba(0,0,0,0.6); }
@@ -260,8 +269,8 @@
 
         footer { text-align: center; padding-top: 50px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
 
-        @media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } .cert-grid { grid-template-columns: 1fr; } .stack-grid { grid-template-columns: 1fr; } }
-        @media (max-width: 600px) { h1 { font-size: 2.5rem; } .projects-grid { grid-template-columns: 1fr; } .impact-grid { gap: 30px; } }
+        @media (max-width: 900px) { .cert-grid { grid-template-columns: 1fr; } .stack-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 600px) { h1 { font-size: 2.5rem; } .impact-grid { gap: 30px; } }
     </style>
 </head>
 <body>
@@ -285,18 +294,18 @@
             <h2>Systems Engineer & Data Extraction Specialist</h2>
             <p class="bio">
                 I build production-ready software for data extraction and AI pipelines. 
-                Creator of 9+ high-performance Actors on the Apify Store.
+                Creator of 10+ high-performance Actors on the Apify Store.
             </p>
             <div class="social-links">
                 <a href="https://github.com/ortizdelgadojohanjose04-ai" target="_blank" class="btn-link">GitHub</a>
                 <a href="https://linkedin.com/in/johan-ortiz-260aa0378" target="_blank" class="btn-link">LinkedIn</a>
-                <a href="https://apify.com/johandev_04" target="_blank" class="btn-link">Apify Store (9+ Actors)</a>
+                <a href="https://apify.com/johandev_04" target="_blank" class="btn-link">Apify Store (10+ Actors)</a>
                 <button onclick="copyEmail()" class="btn-link" id="emailBtn">Copy Email</button>
             </div>
         </header>
 
         <div class="impact-grid">
-            <div class="impact-item"><span class="impact-number">9+</span><span class="impact-label">Published Actors</span></div>
+            <div class="impact-item"><span class="impact-number">10+</span><span class="impact-label">Published Actors</span></div>
             <div class="impact-item"><span class="impact-number">99%</span><span class="impact-label">Success Rate</span></div>
             <div class="impact-item"><span class="impact-number">B2B</span><span class="impact-label">Data Focus</span></div>
             <div class="impact-item"><span class="impact-number">24/7</span><span class="impact-label">Reliability</span></div>
@@ -344,7 +353,9 @@
 
         <section id="projects">
             <div class="section-title">Published Software (Apify Store)</div>
-            <div class="projects-grid">
+            
+            <!-- CARRUSEL DE PROYECTOS -->
+            <div class="projects-carousel">
                 <div class="project-card">
                     <div class="project-title">LinkedIn Company Scraper</div>
                     <p class="project-desc">Extract company data using Google Search. 100% reliable, no cookies.</p>
@@ -393,12 +404,18 @@
                     <div class="project-tags"><span class="tag">Python</span><span class="tag">AI</span></div>
                     <a href="https://apify.com/johandev_04/ai-content-detector" class="btn-project">Try on Apify</a>
                 </div>
-                <!-- NUEVA TARJETA: URL TO MARKDOWN -->
                 <div class="project-card">
                     <div class="project-title">URL to Markdown for AI Agents</div>
                     <p class="project-desc">Convert webpages to clean Markdown. Fail-safe errors for AI agents and RAG pipelines.</p>
                     <div class="project-tags"><span class="tag">Python</span><span class="tag">AI</span></div>
                     <a href="https://apify.com/johandev_04/url-to-markdown-agent" class="btn-project">Try on Apify</a>
+                </div>
+                <!-- NUEVA TARJETA: SMART DATA EXTRACTOR -->
+                <div class="project-card">
+                    <div class="project-title">Smart Data Extractor (No APIs)</div>
+                    <p class="project-desc">Extract structured data (titles, prices, emails, links) from any website using pure Python. Zero API keys.</p>
+                    <div class="project-tags"><span class="tag">Python</span><span class="tag">No APIs</span></div>
+                    <a href="https://apify.com/johandev_04/smart-data-extractor" class="btn-project">Try on Apify</a>
                 </div>
             </div>
         </section>
