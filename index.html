@@ -161,13 +161,12 @@
         .stack-card h4 { font-size: 1.2rem; color: #fff; margin-bottom: 10px; }
         .stack-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* CARRUSEL DE PROYECTOS (3 COLUMNAS EXACTAS + SCROLL) */
+        /* CARRUSEL DE PROYECTOS (3 COLUMNAS FIJAS) */
         .projects-carousel {
             overflow-x: auto;
             padding-bottom: 20px;
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
-            /* Opcional: Añade un pequeño gradiente al final para indicar que hay más */
         }
         .projects-carousel::-webkit-scrollbar { height: 8px; }
         .projects-carousel::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
@@ -175,9 +174,14 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(3, 300px); /* 3 columnas EXACTAS de 300px */
+            grid-template-columns: repeat(3, 320px); /* 3 columnas exactas */
             gap: 24px;
-            width: max-content; /* Fuerza a que el grid sea tan ancho como su contenido */
+            width: max-content; /* Fuerza el ancho para activar el scroll */
+        }
+        
+        /* Asegura que cada tarjeta ocupe su columna exacta */
+        .project-card {
+            width: 100%;
         }
 
         .project-card { 
