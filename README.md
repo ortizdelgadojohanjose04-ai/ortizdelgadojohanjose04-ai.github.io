@@ -12,9 +12,9 @@ This repository contains the source code for my **professional portfolio website
 
 ---
 
-### 🚀 Featured Software (11 High-Performance Actors)
+### 🚀 Featured Software (12 High-Performance Actors)
 
-A curated selection of **11 production-ready Actors** published on the Apify Store, designed for B2B data extraction and AI pipelines.
+A curated selection of **12 production-ready Actors** published on the Apify Store, designed for B2B data extraction and AI pipelines.
 
 #### 🕸️ Web Scrapers
 | Actor | Description | Stack |
@@ -38,6 +38,7 @@ A curated selection of **11 production-ready Actors** published on the Apify Sto
 | **[URL to Markdown for AI Agents](https://apify.com/johandev_04/url-to-markdown-agent)** | Converts webpages to clean Markdown. Fail-safe for AI agents and RAG. | `Python` `RAG` |
 | **[Smart Data Extractor (No APIs)](https://apify.com/johandev_04/smart-data-extractor)** | Extracts structured data (titles, prices, emails) using pure Python. | `Python` `No APIs` |
 | **[Web Metadata Extractor](https://apify.com/johandev_04/web-metadata-extractor)** | Extracts titles, descriptions, and Open Graph images from any webpage. Fast and no JavaScript required. | `Python` `SEO` |
+| **[Bluesky Scraper & API](https://apify.com/johandev_04/bluesky-scraper)** | Extracts posts, likes, and metadata from Bluesky using the public AT Protocol API. No login required. | `Python` `Social Media` |
 
 ---
 
@@ -53,7 +54,7 @@ A curated selection of **11 production-ready Actors** published on the Apify Sto
 
 - **Email:** [ortizdelgadojohanjose04@gmail.com](https://mail.google.com/mail/?view=cm&fs=1&to=ortizdelgadojohanjose04@gmail.com&su=Job%20Opportunity%20for%20Johan%20Ortiz)
 - **WhatsApp:** [+506 8760-1125](https://api.whatsapp.com/send?phone=50687601125&text=Hola%20Johan,%20vi%20tu%20portafolio%20y%20me%20interesa%20contactarte.)
-- **LinkedIn:** [johan-ortiz-260aa0378](https://linkedin.com/in/johan-ortiz-dev)
+- **LinkedIn:** [johan-ortiz-dev](https://linkedin.com/in/johan-ortiz-dev)
 - **Apify Store:** [johandev_04](https://apify.com/johandev_04)
 
 ---
