@@ -80,7 +80,7 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 120px 24px 60px 24px; }
 
-        header { text-align: center; margin-bottom: 80px; animation: fadeInUp 1s ease-out; }
+        header { text-align: center; margin-bottom: 60px; animation: fadeInUp 1s ease-out; }
         .badge-available { 
             display: inline-block; 
             background: rgba(16, 185, 129, 0.1); 
@@ -99,7 +99,7 @@
         h2 { font-size: 1.5rem; font-weight: 400; color: var(--accent-gold); margin-bottom: 30px; font-family: var(--mono); }
         .bio { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px auto; }
         
-        .social-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 80px; }
+        .social-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
         .btn-link { 
             display: inline-flex; 
             align-items: center; 
@@ -116,6 +116,35 @@
             cursor: pointer;
         }
         .btn-link:hover { border-color: var(--accent-blue); transform: translateY(-2px); box-shadow: 0 5px 15px var(--accent-glow); }
+
+        /* NUEVA SECCIÓN: DESTACADO WEB APP */
+        .featured-app {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(234, 179, 8, 0.05));
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 80px;
+            text-align: center;
+            animation: fadeInUp 1.2s ease-out;
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15);
+        }
+        .featured-app h3 { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 15px; }
+        .featured-app p { color: var(--text-muted); font-size: 1.1rem; max-width: 700px; margin: 0 auto 30px auto; }
+        .btn-featured { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px;
+            background: var(--accent-blue); 
+            color: #fff; 
+            padding: 16px 40px; 
+            border-radius: 10px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 1.1rem; 
+            transition: all 0.3s; 
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+        .btn-featured:hover { transform: translateY(-3px); box-shadow: 0 8px 25px var(--accent-glow); background: #2563eb; }
 
         .impact-grid { display: flex; justify-content: center; gap: 60px; margin-bottom: 100px; flex-wrap: wrap; animation: fadeInUp 1.2s ease-out; }
         .impact-item { text-align: center; }
@@ -307,12 +336,31 @@
                 Creator of 12+ high-performance Actors on the Apify Store.
             </p>
             <div class="social-links">
+                <a href="https://apify-analytics-dashboard.vercel.app" target="_blank" class="btn-link" style="border-color: var(--accent-blue); color: var(--accent-blue); font-weight: bold;">🌐 Live Web App</a>
                 <a href="https://github.com/ortizdelgadojohanjose04-ai" target="_blank" class="btn-link">GitHub</a>
                 <a href="https://linkedin.com/in/johan-ortiz-dev" target="_blank" class="btn-link">LinkedIn</a>
                 <a href="https://apify.com/johandev_04" target="_blank" class="btn-link">Apify Store (12+ Actors)</a>
                 <button onclick="copyEmail()" class="btn-link" id="emailBtn">Copy Email</button>
             </div>
         </header>
+
+        <!-- NUEVA SECCIÓN DESTACADA: WEB APP -->
+        <div class="featured-app">
+            <h3>🚀 Featured Project: Apify Analytics Dashboard</h3>
+            <p>
+                A full-stack web application built with <strong>Next.js, TypeScript, and Tailwind CSS</strong>. 
+                Connects directly to the Apify API and PayPal API to monitor 12 production-ready scrapers in real-time. 
+                Features admin security, dark mode, and interactive charts.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="https://apify-analytics-dashboard.vercel.app" target="_blank" class="btn-featured">
+                    View Live Dashboard →
+                </a>
+                <a href="https://github.com/ortizdelgadojohanjose04-ai/My-Dashboard---Apify" target="_blank" class="btn-link" style="background: #111; border-color: #333; color: #fff;">
+                    View Source Code
+                </a>
+            </div>
+        </div>
 
         <div class="impact-grid">
             <div class="impact-item"><span class="impact-number">12+</span><span class="impact-label">Published Actors</span></div>
@@ -355,8 +403,8 @@
                     <p>FastAPI, PostgreSQL, Apify SDK, Playwright, BeautifulSoup</p>
                 </div>
                 <div class="stack-card">
-                    <h4>Game Development</h4>
-                    <p>Godot Engine (OOP, math logic, optimization)</p>
+                    <h4>Frontend & Tools</h4>
+                    <p>Next.js, React, TypeScript, Tailwind CSS, Vercel</p>
                 </div>
             </div>
         </section>
